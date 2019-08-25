@@ -52,9 +52,13 @@
       <script> 
       //vypocty preplatku resp. doplatku z databaze plateb
       // Create an object: suma plateb 
+      var elrek_suma = {dif: 0,sign: "Přeplatek"}; //rekonstrukce elektrika 
+      var svrek_suma = {dif: 0,sign: "Přeplatek"}; //rekonstrukce SV
+      var tvrek_suma = {dif: 0,sign: "Přeplatek"}; //rekonstrukce TV
       var el_suma = {m: 0,n: 0,dif: 0,sign: "Přeplatek"};  
       var pl_suma = {m: 0,n: 0,dif: 0,sign: "Přeplatek"}; 
       var en_suma = {m: 0,n: 0,dif: 0,sign: "Přeplatek"}; 
+      
       var ov_suma = { dif: 0,sign :"Přeplatek"}; //overview, final
       var ov_text = "";
       elpays.forEach(sumupel); 
@@ -69,7 +73,8 @@
       el_suma.dif = el_suma.n - el_suma.m ;
       pl_suma.dif = pl_suma.n - pl_suma.m ;
       en_suma.dif = en_suma.n - en_suma.m ;
-      ov_suma.dif = el_suma.dif + pl_suma.dif + en_suma.dif;
+      ov_suma.dif = el_suma.dif + pl_suma.dif + en_suma.dif+
+                    elrek_suma.dif+svrek_suma.dif+tvrek_suma.dif;
       if(el_suma.dif < 0) el_suma.sign = "Doplatek";
       if(pl_suma.dif < 0) pl_suma.sign = "Doplatek";
       if(en_suma.dif < 0) en_suma.sign = "Doplatek";
@@ -153,6 +158,21 @@
     addCell(tr,"Služby, voda a topení","1","text-align:left");
     addCell(tr,Math.abs(en_suma.dif)+ " Kč","1","text-align:left");
     addCell(tr,en_suma.sign,"1","text-align:left");
+    tbl.appendChild(tr);
+    var tr = document.createElement('tr'); //new  row
+    addCell(tr,"spotreba elektrické energie po dobu rekonstrukce","1","text-align:left");
+    addCell(tr,Math.abs(elrek_suma.dif)+ " Kč","1","text-align:left");
+    addCell(tr,elrek_suma.sign,"1","text-align:left");
+    tbl.appendChild(tr);
+    var tr = document.createElement('tr'); //new  row
+    addCell(tr,"spotreba studené vody po dobu rekonstrukce","1","text-align:left");
+    addCell(tr,Math.abs(svrek_suma.dif)+ " Kč","1","text-align:left");
+    addCell(tr,svrek_suma.sign,"1","text-align:left");
+    tbl.appendChild(tr);
+    var tr = document.createElement('tr'); //new  row
+    addCell(tr,"spotreba teplé vody po dobu rekonstrukce","1","text-align:left");
+    addCell(tr,Math.abs(tvrek_suma.dif)+ " Kč","1","text-align:left");
+    addCell(tr,tvrek_suma.sign,"1","text-align:left");
     tbl.appendChild(tr);
     var tr = document.createElement('tr'); //new  row
     addCell(tr,"Celkem","1","text-align:left");

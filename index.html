@@ -1,20 +1,5 @@
 <!DOCTYPE html>
 <html> 
-    <head>   
-          <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-          <script src="ppersonaldata.js"></script>
-          <style>
-               @media print {footer {page-break-after: always;}}
-               
-               table {font-family: arial, sans-serif;font-size: medium;
-                       border-collapse: collapse;width:15cm}    
-           
-               td,th {border: 1px solid black; text-align: left;
-                       padding: 5px;width:5cm}
-               
-               h2 {color: black;text-align: center;}
-           </style>   
-       </head>
     <script>
       // deklarace pole plateb
       var elpays = []; //Platby elektrika, pole
@@ -65,7 +50,21 @@
            var Pronajimatel = "",Najemce = "",adresa = "",accPron = "",accNaj = "";
            var Zobdobi = "Zúčtovací období : od 1.7 2019 do 30.6 2020";  
       </script>   
-     
+     <head>   
+          <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+          <script src="ppersonaldata.js"></script>
+          <style>
+               @media print {footer {page-break-after: always;}}
+               
+               table {font-family: arial, sans-serif;font-size: medium;
+                       border-collapse: collapse;width:15cm}    
+           
+               td,th {border: 1px solid black; text-align: left;
+                       padding: 5px;width:5cm}
+               
+               h2 {color: black;text-align: center;}
+           </style>   
+       </head>
       <script> 
       //vypocty preplatku resp. doplatku z databaze plateb
       // Create an object: suma plateb 

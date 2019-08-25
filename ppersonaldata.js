@@ -1,4 +1,4 @@
-Pronajimatel = " Arnold Schwarzeneger, r.č. 121212/111 ";
+Pronajimatel = "Arnold Schwarz, r.č. 121212/111 ";
 Najemce = "Nname Nsurname, r.č. 212121/222";
 accPron = "1111111111/1111";
 accNaj = "2222222222/2222";

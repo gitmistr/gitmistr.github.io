@@ -160,17 +160,17 @@
     addCell(tr,en_suma.sign,"1","text-align:left");
     tbl.appendChild(tr);
     var tr = document.createElement('tr'); //new  row
-    addCell(tr,"spotreba elektrické energie po dobu rekonstrukce","1","text-align:left");
+    addCell(tr,"Rekonstrukce: elektrická energie","1","text-align:left");
     addCell(tr,Math.abs(elrek_suma.dif)+ " Kč","1","text-align:left");
     addCell(tr,elrek_suma.sign,"1","text-align:left");
     tbl.appendChild(tr);
     var tr = document.createElement('tr'); //new  row
-    addCell(tr,"spotreba studené vody po dobu rekonstrukce","1","text-align:left");
+    addCell(tr,"Rekonstrukce: studená voda","1","text-align:left");
     addCell(tr,Math.abs(svrek_suma.dif)+ " Kč","1","text-align:left");
     addCell(tr,svrek_suma.sign,"1","text-align:left");
     tbl.appendChild(tr);
     var tr = document.createElement('tr'); //new  row
-    addCell(tr,"spotreba teplé vody po dobu rekonstrukce","1","text-align:left");
+    addCell(tr,"Rekonstrukce: teplá voda","1","text-align:left");
     addCell(tr,Math.abs(tvrek_suma.dif)+ " Kč","1","text-align:left");
     addCell(tr,tvrek_suma.sign,"1","text-align:left");
     tbl.appendChild(tr);
@@ -218,7 +218,7 @@
                  border-collapse: collapse;width:15cm}    
      
          td,th {border: 1px solid black; text-align: left;
-                 padding: 5px;}
+                 padding: 5px;width: 5cm;}
          
          h2 {color: black;text-align: center;}
      </style>   
@@ -229,7 +229,7 @@
   <p id="headov"></p>
   <br /><br />
 
-   <table id='tbl_ov' style="width: 18cm"></table>
+   <table id='tbl_ov' style="width: 15cm"></table>
    <p> <br /> <br /><br /></p><h3>
     <span  id = "ov1" style="border:2px solid black; border-right: none;padding:6px"> </span>
     <span  id = "ov2" style="border: 2px solid black;padding:6px"> </span>

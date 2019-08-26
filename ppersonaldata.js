@@ -1,4 +1,4 @@
-Pronajimatel = "Pjmeno Pprijmeni, r.č. 5555555/111 ";
+Pronajimatel = "Pjmeno Pprijmeni, r.č. 4555555/111 ";
 Najemce = "Njmeno Nprijmeni, r.č. 212121/222";
 accPron = "1111111111/1111";
 accNaj = "2222222222/2222";

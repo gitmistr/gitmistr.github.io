@@ -3,36 +3,41 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.vertical-menu {
-  width: 300px;
-}
+.vertical-menu {width: 300px;border: 2px solid black;margin-left: auto;
+  margin-right: auto;}
 
 .vertical-menu a {
   background-color: #eee;
   color: black;
   display: block;
   padding: 12px;
-  text-decoration: none;
+  text-decoration:none;
+  border-bottom: 2px solid black;
+  font-size: large;
+  
 }
+.vertical-menu a:last-child {border-bottom: none}
 
-.vertical-menu a:hover {
-  background-color:lightpink ;
-}
+.vertical-menu a:hover {background-color:lightpink }
 
-.vertical-menu a.active {
-  background-color: #4CAF50;
-  color: white;
-}
 h1 {color: black;text-align: center;}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>
 </head>
 <body>
 
-<h1>Online formuláře</h1>
+<h1>Online informace o bytu</h1>
 
-<div class="vertical-menu">
-  <a href="js_table_vyuc.html">Přehled vyučtování 2019/2020</a>
-  <a href="js_table_predpis.html">Položky nájemného</a>
+<img src="panelak.jpg" alt="Trulli" style="width:200px;height:300px;"  >
+<p><br /></p>
+<div class="vertical-menu" >
+  <a href="js_table_vyuc.html">* Přehled vyučtování 2019/2020</a>
+  <a href="js_table_predpis.html">* Položky nájemného</a>
   
 </div>
 

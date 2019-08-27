@@ -4,16 +4,13 @@
       //personal data and account numbers defined in personaldata.js 
       var Pronajimatel = "",Najemce = "",adresa = "";
       // deklarace pole predpis plateb
-      var najem = [];
-      najem.push({id:"Služby, voda a topení", m: 0}); //calculated from predpis
-      najem.push({id:"Elektrická energie", m: 1100});
-      najem.push({id:"Plyn", m: 300});
-      najem.push({id:"Nájem", m: 4700});
+      var najem = []; //Polozky najemneho
+      var prpays = []; //Predpis polozek za sluzby
+      najem.push({kod: "sl",id:"Služby, voda a topení", m: 0}); //calculat predpis
+      najem.push({kod: "el",id:"Elektrická energie",    m: 1100});
+      najem.push({kod: "pl",id:"Plyn",                  m: 300});
+      najem.push({kod: "na",id:"Nájem",                 m: 4700});
 
-      var najemne = 4700;
-      var el_zaloha = 1100;
-      var pl_zaloha = 300; 
-      var prpays = []; //Platby  predpis pole
       // Databaze predpisu plateb za sluzby
       prpays.push({ id: "Voda",               m: 350});
       prpays.push({ id: "Teplo",              m: 960});
@@ -34,10 +31,11 @@
         { 
           pr_suma = pr_suma + value.m;
         }
-        najem[0].m = pr_suma;
+        
         najem.forEach(sumup1); 
       function sumup1(value, index, array) 
         {
+          if(value.kod == "sl") value.m = pr_suma; //calculate sluzby
           celkemplatba = celkemplatba + value.m; 
         }
       </script>

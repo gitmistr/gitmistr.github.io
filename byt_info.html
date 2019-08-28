@@ -3,7 +3,33 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
 
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
 
 .vertical-menu {width: 300px;border: 2px solid black;float:left;margin: 1cm}
 
@@ -25,7 +51,10 @@ h1 {color: black;text-align: center;}
 img {display: block;float:left;}
 </style>
 </head>
-
+<body>
+    <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+      </ul>
 <h1>Informace o bytu</h1>
 <img src="panelak.jpg" alt="Trulli" style="width:200px;height:300px;"  >
 <p><br /></p>

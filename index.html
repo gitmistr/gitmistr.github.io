@@ -29,27 +29,12 @@ li a:hover:not(.active) {
   background-color: #4CAF50;
 }
 
+h2 {color: black;text-align: center;}
 
-h1 {color: black;text-align: center;}
-img {display: block;float:left;margin: 10px;}
+.box1style {float: left;width:50%;padding: 5px;}
+.box2style {float: left;width:30%;padding: 5px;}
 
-
-.img1style {
-  float: left;
-  width:50%;
-  padding: 5px;
-}
-.img2style {
-  float: left;
-  width:30%;
-  padding: 5px;
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+.clearfix::after {content: "";clear: both;display: table;}
 </style>
 </head>
 <body>
@@ -64,12 +49,13 @@ img {display: block;float:left;margin: 10px;}
       </ul>
       <h2>Vítejte na moji webové stránce</h2>
 
-<div class="clearfix">
-  <div class="img1style">
-  <img src="rybrcoul.jpg" alt="Italy" style="width:100%">
+  <div class="clearfix">
+  <div class="box1style">
+  <img src="rybrcoul.jpg"  alt = "rybr" style="width:100%">
   </div>
-  <div class="img2style">
-  <img src="speechbubble.jpg" alt="Forest" style="width:100%">
+  <div class="box2style">
+  <img src="speechbubble.jpg" alt="bubble" style="width:100%">
   </div>
- 
 </div>
+
+

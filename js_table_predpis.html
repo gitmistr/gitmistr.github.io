@@ -3,9 +3,9 @@
     <script>
       //personal data and account numbers defined in personaldata.js 
       var Pronajimatel = "",Najemce = "",adresa = "";
-      // deklarace pole predpis plateb
-      var najem = []; //Polozky najemneho
-      var prpays = []; //Predpis polozek za sluzby
+
+      var najem = []; //pole Polozky najemneho
+      var prpays = []; //pole Predpis polozek za sluzby
       najem.push({kod: "sl",id:"Služby, voda a topení", m: 0}); //calculat predpis
       najem.push({kod: "el",id:"Elektrická energie",    m: 1100});
       najem.push({kod: "pl",id:"Plyn",                  m: 300});
@@ -104,8 +104,9 @@
    
    }
 </script>
-<head>   
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    
     <style>
          @media print {footer {page-break-after: always;}}
          

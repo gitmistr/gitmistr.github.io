@@ -65,9 +65,7 @@ body {
   background-color:lightcoral;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+
 h2 {color: black;text-align: center;}
 .box1style {float: left;width: 50%;padding: 5px;}
 .box2style {float: left;width:30%;padding: 5px;}
@@ -75,17 +73,26 @@ h2 {color: black;text-align: center;}
 </style>
 </head>
 <body>
-
+  <script>
+    var i=0;
+  function stylchange() 
+   { 
+  if(document.getElementById('divlangs').style.display== "none")
+   document.getElementById('divlangs').style.display= "block";
+   else
+   document.getElementById('divlangs').style.display= "none";
+   }
+  </script>
 <div class="navbar">
   <a href="index.html">Home</a>
   <a href="byt_info.html">Byt</a>
   <a href="https://new.siemens.com/cz/cs.html">Práce</a>
-  <div class="dropdown">
-    <button class="dropbtn" type="button" onclick="alert('hi')">CES</button>
-    <div class="dropdown-content">
-      <a href="#">ENG</a>
-      <a href="#">DEU</a>
-      <a href="#">SLK</a>
+  <div  id = "divlang" class="dropdown">
+    <button class="dropbtn" type="button" onclick="stylchange()">CES</button>
+    <div id = "divlangs" class="dropdown-content">
+      <a id = "a1" href="#">ENG</a>
+      <a id = "a2" href="#">DEU</a>
+      <a id = "a3" href="#">SLK</a>
     </div>
   </div> 
 </div>

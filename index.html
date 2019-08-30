@@ -74,13 +74,19 @@ h2 {color: black;text-align: center;}
 </head>
 <body>
   <script>
-    var i=0;
+    var click=0;
   function stylchange() 
    { 
-  if(document.getElementById('divlangs').style.display== "none")
+
+   if(document.getElementById('divlangs').style.display== "none")
    document.getElementById('divlangs').style.display= "block";
    else
    document.getElementById('divlangs').style.display= "none";
+   if(click==0)
+   {
+     click = 1;
+     document.getElementById('divlangs').style.display= "block";
+     }
    }
   </script>
 <div class="navbar">

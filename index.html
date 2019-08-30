@@ -1,8 +1,76 @@
 <!DOCTYPE html>
 <html>
+  <script> //Javascript code
+    var text_welcome = []; //array of text welcome for languages
+    //databases of all texts for various languages
+    text_welcome.push({id:"CES", 
+    text: "Vítejte na mé webové stránce"});
+    text_welcome.push({id:"SLK", 
+    text: "Vitajte na mojej webovej stránke"});
+    text_welcome.push({id:"ENG", 
+    text: "Welcome to my website"});
+    text_welcome.push({id:"DEU", 
+    text: "Willkommen auf meiner Webseite"});
+    var click=0;
+    var text_a = ""; text_btn="";
+    function buildpage(language)
+    {
+     var txt="";
+     switch (language)
+     {
+      case "CES": txt = text_welcome[0].text; break;
+      case "SLK": txt = text_welcome[1].text; break;
+      case "ENG": txt = text_welcome[2].text; break;
+      case "DEU": txt = text_welcome[3].text; break;
+     }
+     document.getElementById("pg_welcome").innerHTML = txt;
+    }
+    function a1click() //pickup language from div1
+    {
+      text_a = document.getElementById("a1").innerHTML  ;
+      text_btn = document.getElementById("langbtn").innerHTML;
+      document.getElementById("a1").innerHTML = text_btn;
+      document.getElementById("langbtn").innerHTML = text_a;
+      buildpage(text_a);
+     }
+   function a2click() //pickup language from div2
+    {
+    text_a = document.getElementById("a2").innerHTML  ;
+     text_btn = document.getElementById("langbtn").innerHTML;
+     document.getElementById("a2").innerHTML = text_btn;
+     document.getElementById("langbtn").innerHTML = text_a;
+     buildpage(text_a);
+    }
+    function a3click() //pickup language div3
+   {
+    text_a = document.getElementById("a3").innerHTML  ;
+    text_btn = document.getElementById("langbtn").innerHTML;
+     document.getElementById("a3").innerHTML = text_btn;
+    document.getElementById("langbtn").innerHTML = text_a;
+    buildpage(text_a);
+    }
+     function stylchange() //display,hide div languages on click
+    { 
+    
+    if(document.getElementById('divlangs').style.display== "none")
+     document.getElementById('divlangs').style.display= "block";
+    else
+     document.getElementById('divlangs').style.display= "none";
+     if(click==0) //on very first click, div languages display
+      {
+        click = 1;
+        document.getElementById('divlangs').style.display= "block";
+        }
+      }
+  function main()
+   {
+     var lang_id="";
+     lang_id = document.getElementById("langbtn").innerHTML;
+     buildpage(lang_id);
+   }
+      </script>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-</script></script>
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -73,45 +141,8 @@ h2 {color: black;text-align: center;}
 .clearfix::after {content: "";clear: both;display: table;}
 </style>
 </head>
-<body>
-  <script>
-    var click=0;
-    var text_a = ""; text_btn="";
-    function a1click()
-    {
-      text_a = document.getElementById("a1").innerHTML  ;
-      text_btn = document.getElementById("langbtn").innerHTML;
-      document.getElementById("a1").innerHTML = text_btn;
-      document.getElementById("langbtn").innerHTML = text_a;
-    }
-    function a2click()
-    {
-      text_a = document.getElementById("a2").innerHTML  ;
-      text_btn = document.getElementById("langbtn").innerHTML;
-      document.getElementById("a2").innerHTML = text_btn;
-      document.getElementById("langbtn").innerHTML = text_a;
-    }
-    function a3click()
-    {
-      text_a = document.getElementById("a3").innerHTML  ;
-      text_btn = document.getElementById("langbtn").innerHTML;
-      document.getElementById("a3").innerHTML = text_btn;
-      document.getElementById("langbtn").innerHTML = text_a;
-    }
-    function stylchange() 
-    { 
-
-   if(document.getElementById('divlangs').style.display== "none")
-   document.getElementById('divlangs').style.display= "block";
-   else
-   document.getElementById('divlangs').style.display= "none";
-   if(click==0)
-   {
-     click = 1;
-     document.getElementById('divlangs').style.display= "block";
-     }
-   }
-  </script>
+<body onload='main()'>
+  
 <div class="navbar">
   <a href="index.html">Home</a>
   <a href="byt_info.html">Byt</a>
@@ -125,7 +156,7 @@ h2 {color: black;text-align: center;}
     </div>
   </div> 
 </div>
-<h2>Vítejte na moji webové stránce</h2>
+<h2 id="pg_welcome">Vítejte na moji webové stránce</h2>
 <div class="clearfix">
   <div class="box1style">
   <img src="rybrcoul.jpg"  alt = "rybr" style="width:100%">

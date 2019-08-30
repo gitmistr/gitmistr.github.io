@@ -75,8 +75,30 @@ h2 {color: black;text-align: center;}
 <body>
   <script>
     var click=0;
-  function stylchange() 
-   { 
+    var text_a = ""; text_btn="";
+    function a1click()
+    {
+      text_a = document.getElementById("a1").innerHTML  ;
+      text_btn = document.getElementById("langbtn").innerHTML;
+      document.getElementById("a1").innerHTML = text_btn;
+      document.getElementById("langbtn").innerHTML = text_a;
+    }
+    function a2click()
+    {
+      text_a = document.getElementById("a2").innerHTML  ;
+      text_btn = document.getElementById("langbtn").innerHTML;
+      document.getElementById("a2").innerHTML = text_btn;
+      document.getElementById("langbtn").innerHTML = text_a;
+    }
+    function a3click()
+    {
+      text_a = document.getElementById("a3").innerHTML  ;
+      text_btn = document.getElementById("langbtn").innerHTML;
+      document.getElementById("a3").innerHTML = text_btn;
+      document.getElementById("langbtn").innerHTML = text_a;
+    }
+    function stylchange() 
+    { 
 
    if(document.getElementById('divlangs').style.display== "none")
    document.getElementById('divlangs').style.display= "block";
@@ -94,11 +116,11 @@ h2 {color: black;text-align: center;}
   <a href="byt_info.html">Byt</a>
   <a href="https://new.siemens.com/cz/cs.html">Práce</a>
   <div  id = "divlang" class="dropdown">
-    <button class="dropbtn" type="button" onclick="stylchange()">CES</button>
+    <button id="langbtn" class="dropbtn" type="button" onclick="stylchange()">CES</button>
     <div id = "divlangs" class="dropdown-content">
-      <a id = "a1" href="#">ENG</a>
-      <a id = "a2" href="#">DEU</a>
-      <a id = "a3" href="#">SLK</a>
+      <a id = "a1" href="javascript: a1click(); void(0)">ENG</a>
+      <a id = "a2" href="javascript: a2click(); void(0)">DEU</a>
+      <a id = "a3" href="javascript: a3click(); void(0)">SLK</a>
     </div>
   </div> 
 </div>

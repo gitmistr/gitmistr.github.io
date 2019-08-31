@@ -42,33 +42,23 @@
      document.getElementById("a_work").innerHTML = txt;
     }
 
-    function a1click() //pickup language from div1
+    function aclick(l_index) //pickup language from div1
     {
-      text_a = document.getElementById("a1").innerHTML  ;
-      text_btn = document.getElementById("a0").innerHTML;
-      document.getElementById("a1").innerHTML = text_btn;
-      document.getElementById("a0").innerHTML = text_a;
-     
-      buildpage(text_a);
+      l_code = "";
+      switch (l_index)
+     {
+      case 0 : l_code="CES"; break;
+      case 1 : l_code="SLK"; break;
+      case 2 : l_code="ENG"; break;
+      case 3 : l_code="DEU"; break;
      }
-   function a2click() //pickup language from div2
-    {
-    text_a = document.getElementById("a2").innerHTML  ;
-     text_btn = document.getElementById("a0").innerHTML;
-     document.getElementById("a2").innerHTML = text_btn;
-     document.getElementById("a0").innerHTML = text_a;
-     
-     buildpage(text_a);
-    }
-    function a3click() //pickup language div3
-   {
-    text_a = document.getElementById("a3").innerHTML  ;
-    text_btn = document.getElementById("a0").innerHTML;
-     document.getElementById("a3").innerHTML = text_btn;
-    document.getElementById("a0").innerHTML = text_a;
+      
+      document.getElementById("asel").innerHTML = l_code;
+      buildpage(l_code);
+     }
+   
     
-    buildpage(text_a);
-    }
+    
      function dropbtnclick() //display,hide div languages on click
     { 
     
@@ -158,7 +148,7 @@ body {
 }
 
 .dropdown-content a:hover {
-  background-color:lightcoral;
+  background-color:aquamarine;
 }
 
 
@@ -175,11 +165,12 @@ h2 {color: black;text-align: center;}
   <a id ="a_flat" href="byt_info.html">Byt</a>
   <a id ="a_work" href="https://new.siemens.com/cz/cs.html">Práce</a>
   <div  id = "divlang" class="dropdown" >  
-      <a id = "a0"> CES</a>
+      <a id = "asel"> CES</a>
     <div id = "divlangs" class="dropdown-content">
-      <a id = "a1" href="javascript: a1click(); void(0)">ENG</a>
-      <a id = "a2" href="javascript: a2click(); void(0)">DEU</a>
-      <a id = "a3" href="javascript: a3click(); void(0)">SLK</a>
+      <a id = "a0" href="javascript: aclick(0); void(0)">CES</a>
+      <a id = "a1" href="javascript: aclick(1); void(0)">SLK</a>
+      <a id = "a2" href="javascript: aclick(2); void(0)">ENG</a>
+      <a id = "a3" href="javascript: aclick(3); void(0)">DEU</a>
     </div>
   </div> 
 </div>

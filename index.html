@@ -69,15 +69,15 @@
      function stylchange() //display,hide div languages on click
     { 
     
-    if(document.getElementById('divlangs').style.display== "none")
-     document.getElementById('divlangs').style.display= "block";
-    else
-     document.getElementById('divlangs').style.display= "none";
-     if(click==0) //on very first click, div languages display
-      {
-        click = 1;
-        document.getElementById('divlangs').style.display= "block";
-        }
+    //if(document.getElementById('divlangs').style.display== "none")
+     //document.getElementById('divlangs').style.display= "block";
+    //else
+    // document.getElementById('divlangs').style.display= "none";
+    //if(click==0) //on very first click, div languages display
+      //{
+        //click = 1;
+        //document.getElementById('divlangs').style.display= "block";
+        //}
       }
   function main()
    {
@@ -127,6 +127,10 @@ body {
 .navbar a:hover, .dropdown:hover .dropbtn {
   background-color: red;
   
+}
+.dropdown:hover .dropdown-content
+{
+  display: block
 }
 
 .dropdown-content {

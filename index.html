@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
   <script> //Javascript code
+    var lang_codes = []; //array of languages codes
+    lang_codes.push("CES");
+    lang_codes.push("SLK");
+    lang_codes.push("ENG");
+    lang_codes.push("DEU");
+
     var text_welcome = []; //array of text welcome for languages
     //databases of all texts for various languages
     text_welcome.push({id:"CES", 
@@ -22,6 +28,7 @@
     txt_H: "Hause",txt_F: "Wohnung",txt_W: "Arbeit"});
     var click=0;
     var text_a = ""; text_btn="";
+
     function buildpage(language)
     {
      var txt="",l_index=0;
@@ -56,27 +63,27 @@
       document.getElementById("asel").innerHTML = l_code;
       buildpage(l_code);
      }
-   
+     function add_a (text,txt_script) 
+     {
+      var paddiv = document.createElement("a");
+       paddiv.innerHTML = text;
+      paddiv.setAttribute('href', txt_script);
+      document.getElementById("divlangs").appendChild(paddiv);
+     }
     
-    
-     function dropbtnclick() //display,hide div languages on click
-    { 
-    
-    //if(document.getElementById('divlangs').style.display== "none")
-     //document.getElementById('divlangs').style.display= "block";
-    //else
-    // document.getElementById('divlangs').style.display= "none";
-    //if(click==0) //on very first click, div languages display
-      //{
-        //click = 1;
-        //document.getElementById('divlangs').style.display= "block";
-        //}
-      }
   function main()
    {
-     var lang_id="";
-     lang_id = document.getElementById("langbtn").innerHTML;
-     buildpage(lang_id);
+     var language="",scripttext="";
+     lang_codes.forEach(add_pad); 
+      function add_pad(value, index, array) 
+        {
+          scripttext = "javascript: aclick("+index+ "); void(0)";
+          add_a (value,scripttext) ;     
+        }
+     //add_a ("CES","javascript: aclick(0); void(0)") ;
+     language = document.getElementById("asel").innerHTML;
+     buildpage(language);
+    
    }
       </script>
 <head>
@@ -173,10 +180,7 @@ h2 {color: black;text-align: center;}
   <div  id = "divlang" class="dropdown" >  
       <a id = "asel"> CES</a>
     <div id = "divlangs" class="dropdown-content">
-      <a id = "a0" href="javascript: aclick(0); void(0)">CES</a>
-      <a id = "a1" href="javascript: aclick(1); void(0)">SLK</a>
-      <a id = "a2" href="javascript: aclick(2); void(0)">ENG</a>
-      <a id = "a3" href="javascript: aclick(3); void(0)">DEU</a>
+     
     </div>
   </div> 
 </div>

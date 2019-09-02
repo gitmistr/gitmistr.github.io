@@ -107,10 +107,10 @@ body {
   text-decoration: none;
 }
 
-
+.dropdown a {width:25px}
 .dropdown {
   float: right;
-  margin-right:10px;
+  margin-right:5px;
   overflow:hidden ;
   
 }
@@ -141,23 +141,27 @@ body {
   width: 140px;
   right: 0px;
   margin-top: 50px;
-  margin-right: 18px;
-  background-color:white;
+  margin-right: 13px;
+ background-color: transparent;
   min-width: 10px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  
   border:black;
-  border-style: solid;
-  border-width: 2px;
+  border-style:none;
+  border-width: 2px,2px,2px,2px;
   z-index: 1;
 }
 
 .dropdown-content a {
+  width:25px;
   float:right;
   color: black;
-  padding: 14px 16px;
+  border:black;
+  border-style: solid;
+  border-width: 2px,2px,2px,2px;
   text-decoration: none;
   display: block;
-  text-align:left;
+  text-align:center;
+  background-color:whitesmoke;
 }
 
 .dropdown-content a:hover {

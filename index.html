@@ -42,7 +42,8 @@
      txt = text_welcome[l_index].text;
      document.getElementById("pg_welcome").innerHTML = txt;
      txt = text_menu[l_index].txt_H;
-     document.getElementById("a_home").innerHTML = txt;
+    
+     //document.getElementById("a_home").innerHTML = txt;
      txt = text_menu[l_index].txt_F;
      document.getElementById("a_flat").innerHTML = txt;
      txt = text_menu[l_index].txt_W;
@@ -95,7 +96,7 @@ body {
 
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color:black;
 }
 
 .navbar a {
@@ -103,9 +104,12 @@ body {
   font-size: 16px;
   color: white;
   text-align: center;
-  padding: 16px 16px;
+  padding: 20px;
   text-decoration: none;
+  
 }
+
+
 
 .dropdown a {width:27px}
 .dropdown {
@@ -140,7 +144,7 @@ body {
   position:absolute;
   width: 140px;
   right: 0px;
-  margin-top: 50px;
+  margin-top: 58px;
   margin-right: 13px;
  background-color: transparent;
   min-width: 10px;
@@ -171,7 +175,11 @@ body {
   border-style: solid;
   border-width: 2px,2px,2px,2px;
 }
+.span-logo {
+display: inline-block;
 
+
+}
 
 h2 {color: black;text-align: center;}
 .box1style {float: left;width: 50%;padding: 5px;}
@@ -180,9 +188,16 @@ h2 {color: black;text-align: center;}
 </style>
 </head>
 <body onload='main()'>
-  
+ 
+ 
 <div class="navbar">
-  <a id ="a_home" href="index.html">Domú</a>
+    <a  style = "padding: 0px;float: left;margin-right: 0px; height:58px" href="index.html">
+    <div class="span-logo">
+        <img src="home.jpg" height="58px" width="70px"> </img>
+       
+    </div>
+  </a>
+  
   <a id ="a_flat" href="byt_info.html">Byt</a>
   <a id ="a_work" href="https://new.siemens.com/cz/cs.html">Práce</a>
   <div  id = "divlang" class="dropdown" >  

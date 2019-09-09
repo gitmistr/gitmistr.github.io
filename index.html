@@ -182,13 +182,30 @@ body {
   border-width: 2px,2px,2px,2px;
 }
 .span-logo {
-display: inline-block;}
+display: inline-block;
+;}
+
+
+.span-logo:hover .logo1
+{  opacity: 1;}
+
 
 #ahome{
   padding: 0px;
   float: left ;
   margin-right:0px;
   height: 55px;
+}
+.logo1 {
+  position: absolute;
+  top: 8px;
+  bottom: 0;
+  left: 8px;
+  right: 0;
+  height: 55px;
+  width: 70px;
+  opacity: 0;
+  
 }
 
 h2 {color: black;text-align: center;}
@@ -203,7 +220,11 @@ h2 {color: black;text-align: center;}
 <div class="navbar">
     <a  id="ahome" href="index.html">
     <div class="span-logo">
-        <img src="home.jpg" height="55px" width="70px"> </img>
+        <img  src="home.jpg" height="55px" width="70px"> </img>
+        <div class="logo1">
+            <img  src="home1.jpg" height="55px" width="70px"> </img>
+            
+        </div>  
     </div>
   </a>
   

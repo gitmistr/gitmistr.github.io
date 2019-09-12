@@ -181,24 +181,25 @@ body {
   border-style: solid;
   border-width: 2px,2px,2px,2px;
 }
-#home-icon {
-display: inline-block;
+.divicons {
+display: block;
+z-index: 1;
 }
 
 
-#home-icon:hover #home-icon1
+.divicons:hover .divicons1
 {  opacity: 1;}
 
 
-#ahome{
+a.aicons{
   padding: 0px;
   float: left ;
   margin-right:0px;
   height: 55px;
 }
-#home-icon1 {
-  position: absolute;
-  top: 8px;bottom: 0;left: 8px;right: 0;
+.divicons1 {
+ position: absolute;
+  margin-top: -59px;
   height: 55px;width: 70px;
   opacity: 0;
   
@@ -214,10 +215,19 @@ h2 {color: black;text-align: center;}
  
  
 <div class="navbar">
-    <a  id="ahome" href="index.html">
-    <div id="home-icon">
+    <a  class="aicons" href="index.html">
+    <div class="divicons">
         <img  src="home.jpg" height="55px" width="70px"> </img>
-        <div id="home-icon1">
+        <div class="divicons1">
+            <img  src="home1.jpg" height="55px" width="70px"> </img>
+            
+        </div>  
+    </div>
+  </a>
+  <a  class="aicons" href="index.html">
+    <div class="divicons">
+        <img  src="home.jpg" height="55px" width="70px"> </img>
+        <div class="divicons1">
             <img  src="home1.jpg" height="55px" width="70px"> </img>
             
         </div>  

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <script> //Javascript code
+    var language_selected = "CES";
     var lang_codes = []; //array of languages codes
     lang_codes.push("CES");
     lang_codes.push("SLK");
@@ -62,6 +63,7 @@
      }
       
       document.getElementById("asel").innerHTML = l_code;
+      language_selected = l_code;
       buildpage(l_code);
      }
      function add_a (text,txt_script) 
@@ -71,10 +73,47 @@
       paddiv.setAttribute('href', txt_script);
       document.getElementById("divlangs").appendChild(paddiv);
      }
-    
+
+  function setCookie(cname,cvalue,exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+ 
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+ for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+function clickcookie()
+{ 
+  var cvalue = "XXX";
+  lang=document.getElementById("asel").innerHTML;
+  //language = "CES";
+  if(language_selected=="CES") cvalue = "AA";
+  if(language_selected=="SLK") cvalue = "BB";
+  if(language_selected=="ENG") cvalue = "CC";
+  if(language_selected=="DEU") cvalue = "DD";
+  //user = prompt(language,"");
+ 
+  setCookie("cookie#1", cvalue, 30);
+}
   function main()
    {
-     var language="",scripttext="";
+     var scripttext="";
      lang_codes.forEach(add_pad); 
       function add_pad(value, index, array) 
         {
@@ -82,8 +121,8 @@
           add_a (value,scripttext) ;     
         }
      //add_a ("CES","javascript: aclick(0); void(0)") ;
-     language = document.getElementById("asel").innerHTML;
-     buildpage(language);
+     document.getElementById("asel").innerHTM=language_selected;
+     buildpage(language_selected);
     
    }
       </script>
@@ -224,7 +263,7 @@ h2 {color: black;text-align: center;}
         </div>  
     </div>
   </a>
-  <a  class="aicons" href="index.html">
+  <a  class="aicons" href="javascript: clickcookie(); void(0)">
     <div class="divicons">
         <img  src="home.jpg" height="55px" width="70px"> </img>
         <div class="divicons1">

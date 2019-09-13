@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <script> //Javascript code
-    var language_selected = "CES";
+    var language_index = 3; //select language
     var lang_codes = []; //array of languages codes
-    lang_codes.push("CES");
-    lang_codes.push("SLK");
-    lang_codes.push("ENG");
-    lang_codes.push("DEU");
+    lang_codes.push("CES"); //0, Cesky
+    lang_codes.push("SLK"); //1, Slovensky
+    lang_codes.push("ENG"); //2, English
+    lang_codes.push("DEU"); //3, Deutsch
 
     var text_welcome = []; //array of text welcome for languages
     //databases of all texts for various languages
@@ -30,21 +30,13 @@
     var click=0;
     var text_a = ""; text_btn="";
 
-    function buildpage(language)
+    function buildpage(l_index)
     {
-     var txt="",l_index=0;
-     switch (language)
-     {
-      case "CES": l_index=0; break;
-      case "SLK": l_index=1; break;
-      case "ENG": l_index=2; break;
-      case "DEU": l_index=3; break;
-     }
+     var txt="";
+     txt = lang_codes[l_index];
+     document.getElementById("asel").innerHTML = txt;
      txt = text_welcome[l_index].text;
      document.getElementById("pg_welcome").innerHTML = txt;
-     txt = text_menu[l_index].txt_H;
-    
-     //document.getElementById("a_home").innerHTML = txt;
      txt = text_menu[l_index].txt_F;
      document.getElementById("a_flat").innerHTML = txt;
      txt = text_menu[l_index].txt_W;
@@ -61,10 +53,10 @@
       case 2 : l_code="ENG"; break;
       case 3 : l_code="DEU"; break;
      }
-      
+      language_index = l_index;
       document.getElementById("asel").innerHTML = l_code;
-      language_selected = l_code;
-      buildpage(l_code);
+      
+      buildpage(language_index);
      }
      function add_a (text,txt_script) 
      {
@@ -80,8 +72,6 @@
   var expires = "expires=" + d.toGMTString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
-
- 
 
 function getCookie(cname) {
   var name = cname + "=";
@@ -101,28 +91,38 @@ function getCookie(cname) {
 function clickcookie()
 { 
   var cvalue = "XXX";
-  lang=document.getElementById("asel").innerHTML;
   //language = "CES";
-  if(language_selected=="CES") cvalue = "AA";
-  if(language_selected=="SLK") cvalue = "BB";
-  if(language_selected=="ENG") cvalue = "CC";
-  if(language_selected=="DEU") cvalue = "DD";
+  cvalue = language_index;
+  
   //user = prompt(language,"");
  
   setCookie("cookie#1", cvalue, 30);
 }
+
+
+function readcookie()
+
+{
+    var cvalue=getCookie("cookie#1");
+    if (cvalue == "") ;
+     //language_index = 0;
+    else
+     language_index = cvalue;   
+}
+
   function main()
    {
-     var scripttext="";
+     var scripttext="",l_code="";
      lang_codes.forEach(add_pad); 
       function add_pad(value, index, array) 
         {
           scripttext = "javascript: aclick("+index+ "); void(0)";
           add_a (value,scripttext) ;     
         }
+        
      //add_a ("CES","javascript: aclick(0); void(0)") ;
-     document.getElementById("asel").innerHTM=language_selected;
-     buildpage(language_selected);
+     readcookie();
+     buildpage(language_index);
     
    }
       </script>
@@ -276,10 +276,8 @@ h2 {color: black;text-align: center;}
   <a id ="a_flat" href="byt_info.html">Byt</a>
   <a id ="a_work" href="https://new.siemens.com/cz/cs.html">Práce</a>
   <div  id = "divlang" class="dropdown" >  
-      <a id = "asel" href="#"> CES</a>
-    <div id = "divlangs" class="dropdown-content">
-     
-    </div>
+      <a id = "asel" href="#">CES</a>
+    <div id = "divlangs" class="dropdown-content"></div>
   </div> 
 </div>
 <h2 id="pg_welcome">Vítejte na moji webové stránce</h2>

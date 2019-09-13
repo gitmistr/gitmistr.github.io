@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <script> //Javascript code
-    var language_index = 3; //select language
+    var language_index = 0; //select language
     var lang_codes = []; //array of languages codes
     lang_codes.push("CES"); //0, Cesky
     lang_codes.push("SLK"); //1, Slovensky
@@ -104,10 +104,11 @@ function readcookie()
 
 {
     var cvalue=getCookie("cookie#1");
-    if (cvalue == "") ;
-     //language_index = 0;
-    else
-     language_index = cvalue;   
+    if (cvalue =="0")  language_index=0;
+    if (cvalue =="1")  language_index=1;
+    if (cvalue =="2")  language_index=2;
+    if (cvalue =="3")  language_index=3; 
+    
 }
 
   function main()

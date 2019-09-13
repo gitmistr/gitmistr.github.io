@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <script> //Javascript code
-    var language_index = 0; //select language
+    var language_index = 2; //select language
     var lang_codes = []; //array of languages codes
     lang_codes.push("CES"); //0, Cesky
     lang_codes.push("SLK"); //1, Slovensky
@@ -92,7 +92,7 @@ function clickcookie()
 { 
   var cvalue = "XXX";
   //language = "CES";
-  cvalue = language_index;
+  cvalue = language_index.toString();
   
   //user = prompt(language,"");
  
@@ -176,9 +176,8 @@ body {
 }
 
 .navbar a:hover, .dropdown:hover  {
-  background-color: red;
-  
-}
+  background-color: red;}
+
 .dropdown:hover .dropdown-content
 {
   display: block;
@@ -223,6 +222,7 @@ body {
 }
 .divicons {
 display: block;
+margin-left: 4px;
 z-index: 1;
 }
 
@@ -237,6 +237,8 @@ a.aicons{
   margin-right:0px;
   height: 55px;
 }
+a.aicons:hover
+{background-color: black;}
 .divicons1 {
  position: absolute;
   margin-top: -59px;
@@ -266,9 +268,9 @@ h2 {color: black;text-align: center;}
   </a>
   <a  class="aicons" href="javascript: clickcookie(); void(0)">
     <div class="divicons">
-        <img  src="home.jpg" height="55px" width="70px"> </img>
+        <img  src="cookie.jp.jpg" height="55px" width="70px"> </img>
         <div class="divicons1">
-            <img  src="home1.jpg" height="55px" width="70px"> </img>
+            <img  src="cookie1.jpg" height="55px" width="70px"> </img>
             
         </div>  
     </div>

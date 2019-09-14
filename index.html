@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <script> //Javascript code
-    var language_index = 2; //select language
+    var language_index = 2; //select language, default language
+    var cookie_sel = 1; //1 cookie on, 0 cookie off
     var lang_codes = []; //array of languages codes
     lang_codes.push("CES"); //0, Cesky
     lang_codes.push("SLK"); //1, Slovensky
@@ -45,7 +46,7 @@
 
     function aclick(l_index) //pickup language from div1
     {
-      l_code = "";
+      l_code = "", cvalue = "XXX";
       switch (l_index)
      {
       case 0 : l_code="CES"; break;
@@ -54,6 +55,10 @@
       case 3 : l_code="DEU"; break;
      }
       language_index = l_index;
+      cvalue = language_index.toString();
+      //user = prompt(language,"");
+      if(cookie_sel==1)
+        setCookie("cookie#1", cvalue, 30);
       document.getElementById("asel").innerHTML = l_code;
       
       buildpage(language_index);
@@ -95,19 +100,30 @@ function clickcookie()
   cvalue = language_index.toString();
   
   //user = prompt(language,"");
- 
-  setCookie("cookie#1", cvalue, 30);
+  if(cookie_sel==0){
+    cookie_sel=1;
+    setCookie("cookie#1", cvalue, 30);
 }
-
+  else{
+    cookie_sel=0;
+    cvalue = "DIS";
+    setCookie("cookie#1", cvalue, 30);
+  }
+}
 
 function readcookie()
 
 {
     var cvalue=getCookie("cookie#1");
-    if (cvalue =="0")  language_index=0;
-    if (cvalue =="1")  language_index=1;
-    if (cvalue =="2")  language_index=2;
-    if (cvalue =="3")  language_index=3; 
+    switch (cvalue)
+     {
+      case "0" : language_index=0; break;
+      case "1" : language_index=1; break;
+      case "2" : language_index=2; break;
+      case "3" : language_index=3; break;
+      case "DIS" : cookie_sel = 0; break;
+     }
+   
     
 }
 

@@ -34,6 +34,9 @@
     function buildpage(l_index)
     {
      var txt="";
+     txt = "ON";
+     if(cookie_sel==0)  txt = "OFF";
+     document.getElementById("cooksel").innerHTML = "Cookie<br/>"+txt;
      txt = lang_codes[l_index];
      document.getElementById("asel").innerHTML = txt;
      txt = text_welcome[l_index].text;
@@ -93,22 +96,24 @@ function getCookie(cname) {
   }
   return "";
 }
-function clickcookie()
+function clickcookie(sel)
 { 
-  var cvalue = "XXX";
+  var cvalue = "",txt="";
   //language = "CES";
   cvalue = language_index.toString();
-  
+  cookie_sel = sel;
   //user = prompt(language,"");
-  if(cookie_sel==0){
-    cookie_sel=1;
+  if(cookie_sel==1){
     setCookie("cookie#1", cvalue, 30);
-}
+    txt = "ON";
+  }
   else{
-    cookie_sel=0;
     cvalue = "DIS";
     setCookie("cookie#1", cvalue, 30);
+    txt="OFF";
   }
+ 
+  document.getElementById("cooksel").innerHTML = "Cookie<br/>"+txt;
 }
 
 function readcookie()
@@ -180,6 +185,11 @@ body {
   
 }
 
+#divcook {
+  float: left;
+  margin-right:5px;
+  overflow:hidden ;
+}
 .dropdown .dropbtn {
   font-size: 16px;  
   border: none;
@@ -198,6 +208,10 @@ body {
 {
   display: block;
 }
+#divcook:hover #cooksel-content
+{
+  display: block;
+}
 
 .dropdown-content {
   display: none;
@@ -206,6 +220,21 @@ body {
   right: 0px;
   margin-top: 55px;
   margin-right: 13px;
+ background-color: transparent;
+  min-width: 10px;
+  
+  border:black;
+  border-style:none;
+  border-width: 2px,2px,2px,2px;
+  z-index: 1;
+}
+#cooksel-content {
+  display: none;
+  position:absolute;
+  width: 50px;
+  ;
+  margin-top: 55px;
+  margin-right: 10px;
  background-color: transparent;
   min-width: 10px;
   
@@ -229,8 +258,21 @@ body {
   background-color:whitesmoke;
   border-width: 2px,2px,2px,2px;
 }
-
-.dropdown-content a:hover {
+#cooksel-content a {
+  width:50px;
+  height: 12px;
+  
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align:center;
+  border:whitesmoke;
+  border-style: solid;
+  border-width: 2px,2px,2px,2px;
+  background-color:whitesmoke;
+  border-width: 2px,2px,2px,2px;
+}
+.dropdown-content a:hover , #cooksel-content a:hover {
   background-color:aquamarine;;
   border:black;
   border-style: solid;
@@ -253,8 +295,6 @@ a.aicons{
   margin-right:0px;
   height: 55px;
 }
-a.aicons:hover
-{background-color: black;}
 .divicons1 {
  position: absolute;
   margin-top: -59px;
@@ -262,6 +302,11 @@ a.aicons:hover
   opacity: 0;
   
 }
+a.aicons:hover 
+{
+  background-color: black;
+}
+
 
 h2 {color: black;text-align: center;}
 .box1style {float: left;width: 50%;padding: 5px;}
@@ -282,15 +327,13 @@ h2 {color: black;text-align: center;}
         </div>  
     </div>
   </a>
-  <a  class="aicons" href="javascript: clickcookie(); void(0)">
-    <div class="divicons">
-        <img  src="cookie.jpg" height="55px" width="70px"> </img>
-        <div class="divicons1">
-            <img  src="cookie1.jpg" height="55px" width="70px"> </img>
-            
-        </div>  
-    </div>
-  </a>
+  <div  id = "divcook"  >  
+    <a id = "cooksel" href="#">Cookie<br/>ON</a>
+  <div id = "cooksel-content" >
+    <a href="javascript: clickcookie(1); void(0)">ON</a>
+    <a href="javascript: clickcookie(0); void(0)">OFF</a>
+  </div>
+</div> 
   
   <a id ="a_flat" href="byt_info.html">Byt</a>
   <a id ="a_work" href="https://new.siemens.com/cz/cs.html">Práce</a>

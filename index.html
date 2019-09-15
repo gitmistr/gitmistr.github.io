@@ -47,6 +47,15 @@
      document.getElementById("a_work").innerHTML = txt;
     }
 
+    function settingsclick()
+    {
+      var opacity = 0 ;
+      if(document.getElementById("settins_window").style.opacity == 1)
+      document.getElementById("settins_window").style.opacity = 0;
+      else
+      document.getElementById("settins_window").style.opacity = 1;
+    }
+
     function aclick(l_index) //pickup language from div1
     {
       l_code = "", cvalue = "XXX";
@@ -268,6 +277,16 @@ a.aicons{
   opacity: 0;
   
 }
+
+#settins_window {
+ position: absolute;
+ background-color:rosybrown;
+  margin-top: 0px;
+  margin-left: -60px;
+  height: 200px;width: 200px;
+  opacity: 0;
+  
+}
 a.aicons:hover 
 {
   background-color: black;
@@ -293,14 +312,17 @@ h2 {color: black;text-align: center;}
         </div>  
     </div>
   </a>
-  <a  class="aicons" href="#">
+  <a  class="aicons" href="javascript: settingsclick(); void(0)">
     <div class="divicons">
         <img  src="tools.jpg" height="55px" width="60px"> </img>
         <div class="divicons1">
             <img  src="tools1.jpg" height="55px" width="60px"> </img>
-            
-        </div>  
+        </div>          
     </div>
+    <div id="settins_window">
+      <p> setings set</p>
+    </div> 
+   
   </a>
   
   <a id ="a_flat" href="byt_info.html">Byt</a>

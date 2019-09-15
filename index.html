@@ -47,13 +47,9 @@
      document.getElementById("a_work").innerHTML = txt;
     }
 
-    function settingsclick()
+    function settingsclick(opacit)
     {
-      var opacity = 0 ;
-      if(document.getElementById("settins_window").style.opacity == 1)
-      document.getElementById("settins_window").style.opacity = 0;
-      else
-      document.getElementById("settins_window").style.opacity = 1;
+      document.getElementById("settins_window").style.opacity = opacit;
     }
 
     function aclick(l_index) //pickup language from div1
@@ -279,13 +275,19 @@ a.aicons{
 }
 
 #settins_window {
+  overflow:hidden ;
  position: absolute;
  background-color:rosybrown;
-  margin-top: 0px;
-  margin-left: -60px;
+  margin-top: 55px;
+  margin-left: 0px;
   height: 200px;width: 200px;
   opacity: 0;
   
+}
+#buttclose{
+  background-color:forestgreen;
+  position: absolute;
+  margin-top: 180px;
 }
 a.aicons:hover 
 {
@@ -312,18 +314,21 @@ h2 {color: black;text-align: center;}
         </div>  
     </div>
   </a>
-  <a  class="aicons" href="javascript: settingsclick(); void(0)">
+  
+  <a  class="aicons" href="javascript: settingsclick(1); void(0)">
     <div class="divicons">
         <img  src="tools.jpg" height="55px" width="60px"> </img>
         <div class="divicons1">
             <img  src="tools1.jpg" height="55px" width="60px"> </img>
         </div>          
     </div>
+  </a>
     <div id="settins_window">
-      <p> setings set</p>
+      <button id="buttclose" onclick="settingsclick(0)">Close</button>
+      
     </div> 
    
-  </a>
+  
   
   <a id ="a_flat" href="byt_info.html">Byt</a>
   <a id ="a_work" href="https://new.siemens.com/cz/cs.html">Práce</a>

@@ -48,11 +48,15 @@
      txt = text_menu[l_index].txt_W;
      document.getElementById("a_work").innerHTML = txt;
     }
-
     function settingsclick(opacit)
+    {
+      document.getElementById("settins_window").style.display="block";
+      //document.getElementById("settins_window").style.opacity = opacit;
+    }
+    function settingsaccept(opacit)
     { var cvalue = "";
       var inp=settingscard[0].getElementsByTagName("INPUT");
-      document.getElementById("settins_window").style.opacity = opacit;
+      document.getElementById("settins_window").style.display="none";
       if(inp[0].checked == true)
       {
         cookie_sel=1;
@@ -66,6 +70,12 @@
        setCookie("cookie#1", cvalue, 30);
 
       }
+    }
+    function settingsquit()
+    { 
+      document.getElementById("settins_window").style.display="none";
+      create_settcard0(1);
+      create_settcard1(0); 
     }
 
     function aclick(l_index) //pickup language from div1
@@ -299,15 +309,22 @@ a.aicons{
   margin-top: 55px;
   margin-left: 0px;
   height: 200px;width: 200px;
-  opacity: 0;
+  display: none;
   
 }
-#buttclose{
+#buttaccept{
   background-color:forestgreen;
   position: absolute;
   left: 0px;
   bottom: 0px;
 }
+#buttquit{
+  background-color:forestgreen;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
 a.aicons:hover 
 {
   background-color: black;
@@ -356,8 +373,8 @@ h2 {color: black;text-align: center;}
         <option value="1">Settings Tool 3</option>
       </select>
       <div id ="aftermenu"></div>
-      <button id="buttclose" onclick="settingsclick(0)">Close</button>
-      
+      <button id="buttaccept" onclick="settingsaccept(0)">Accept</button>
+      <button id="buttquit" onclick="settingsquit()">Quit</button>
     </div> 
    
   

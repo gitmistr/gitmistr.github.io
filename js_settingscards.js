@@ -1,5 +1,9 @@
 
     var settingscard = []; //settings menu cards
+    var settingscardlabel = []; // text for setting card
+    settingscardlabel.push("Preferences cookies");
+    settingscardlabel.push("Settings 2");
+    settingscardlabel.push("Settings 3");
     
 
     function Chxbox_rule0(boxindex)  
@@ -74,9 +78,9 @@
      var leg = document.createElement("legend");
      var i =0,input_el,text_el;
      var vartext = [];
-     vartext.push("Settings 1 <br>");
-     vartext.push("Settings 2  <br>");
-     vartext.push("Settings 3  <br>");
+     vartext.push("Prop. 1(TBD) <br>");
+     vartext.push("Prop. 2(TBD)  <br>");
+     vartext.push("Prop. 3(TBD)  <br>");
      settingscard[1].setAttribute("id", "field1");
      settingscard[1].style.display = "none";
      if(disp>0) settingscard[1].style.display = "block";
@@ -98,6 +102,8 @@
     }
     function display_settcard(card_index) 
     {
+      document.getElementById("dropbtn").innerHTML=settingscardlabel[card_index];
+      document.getElementById("dropdown-content1").style.display = "none";
       settingscard[0].style.display = "none"; 
       settingscard[1].style.display = "none";
       if (card_index == "0") 

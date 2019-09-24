@@ -74,8 +74,19 @@
     function settingsquit()
     { 
       document.getElementById("settins_window").style.display="none";
-      create_settcard0(1);
-      create_settcard1(0); 
+      
+      if(settingscard[0].style.display == "none")
+       create_settcard0(0);
+      else 
+       create_settcard0(1);
+       if(settingscard[1].style.display == "none")
+        create_settcard1(0); 
+        else
+        create_settcard1(1);
+    }
+    function dropbtn()
+    { 
+      document.getElementById("dropdown-content1").style.display="block";
     }
 
     function aclick(l_index) //pickup language from div1
@@ -210,21 +221,27 @@ body {
 
 
 
-.dropdown a {width:27px}
-.dropdown {
-  float: right;
-  margin-right:5px;
-  overflow:hidden ;
+.dropdown a {
   
+  width: 27px;
+  font-size: 16px;
+  text-align: center;
 }
 
 
-.dropdown .dropbtn {
-  font-size: 16px;  
+
+.dropdown  {
+  float: right;
+  margin-right:5px;
+  overflow:hidden ;
   border: none;
   outline: none;
   color:white;
-  padding: 14px 16px;
+  text-align: center;
+  padding-top: 0px;
+  padding-bottom:0px; 
+  padding-left: 0px;
+  padding-right: 2px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
@@ -245,7 +262,7 @@ body {
   width: 140px;
   right: 0px;
   margin-top: 55px;
-  margin-right: 13px;
+  margin-right: 7px;
  background-color: transparent;
   min-width: 10px;
   
@@ -303,12 +320,12 @@ a.aicons{
 }
 
 #settins_window {
-  overflow:hidden ;
+  
  position: absolute;
  background-color:rosybrown;
   margin-top: 55px;
   margin-left: 0px;
-  height: 200px;width: 200px;
+  height: 300px;width: 200px;
   display: none;
   
 }
@@ -325,6 +342,14 @@ a.aicons{
   bottom: 0px;
 }
 
+
+
+
+
+
+
+
+
 a.aicons:hover 
 {
   background-color: black;
@@ -332,10 +357,51 @@ a.aicons:hover
 
 fieldset {
       position:absolute;
-      top:20px;
+      top:40px;
       left:0px;
       background-color:white;
+      
     }
+    .dropdown1 {
+  position: absolute;
+  display: block;
+}
+
+#dropdown-content1 {
+  display: none;
+  position: absolute;
+  width:200px;
+  left: 10;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  }
+
+#dropdown-content1 a {
+  color: black;
+  padding: 5px 0px;
+  text-decoration: none;
+  display: block;
+  float:none;
+}
+
+#dropbtn {
+  background-color: #4CAF50;
+  width:200px;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown1:hover #dropbtn {background-color:crimson;} 
+
+
+
+#dropdown-content1 a:hover {background-color:aquamarine;}
+
 
 h2 {color: black;text-align: center;}
 .box1style {float: left;width: 50%;padding: 5px;}
@@ -366,14 +432,19 @@ h2 {color: black;text-align: center;}
     </div>
   </a>
     <div id="settins_window">
-    <select name="menutools" onchange="javascript:display_settcard(this.value);">
-        <option value="0" >Preferences cookie</option>
-       
-      </select>
-      <div id ="aftermenu"></div>
+        <div class="dropdown1">
+        <button id="dropbtn"  onclick="dropbtn(0)">Preferences cookie</button>
+        <div id="dropdown-content1">
+          <a href="javascript:display_settcard(0);">Preferences cookie</a>
+          <a href="javascript:display_settcard(1);">Settings 2</a>
+          <a href="javascript:display_settcard(2);">Settings 3</a>
+        </div>  
+      </div>
+        <div id ="aftermenu"></div> 
       <button id="buttaccept" onclick="settingsaccept(0)">Accept</button>
       <button id="buttquit" onclick="settingsquit()">Quit</button>
     </div> 
+  
    
   
   

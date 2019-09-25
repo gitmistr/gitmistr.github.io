@@ -50,8 +50,17 @@
     }
     function settingsclick(opacit)
     {
+      //document.getElementById("settins_window").innerHTML = ""; 
+      var inp=settingscard[0].getElementsByTagName("INPUT");
+      inp[0].checked = false;
+      inp[1].checked = false;
+      if(cookie_sel==1) inp[0].checked = true;
+      else  inp[1].checked = true;
       document.getElementById("settins_window").style.display="block";
-      //document.getElementById("settins_window").style.opacity = opacit;
+      document.getElementById("dropbtn").innerHTML=settingscardlabel[0];
+      settingscard[0].style.display = "block"; 
+      settingscard[1].style.display = "none";
+     
     }
     function settingsaccept(opacit)
     { var cvalue = "";
@@ -73,20 +82,16 @@
     }
     function settingsquit()
     { 
-      document.getElementById("settins_window").style.display="none";
       
-      if(settingscard[0].style.display == "none")
-       create_settcard0(0);
-      else 
-       create_settcard0(1);
-       if(settingscard[1].style.display == "none")
-        create_settcard1(0); 
-        else
-        create_settcard1(1);
+      settingscard[0].style.display = "none";
+      settingscard[1].style.display = "none";
+     
+        document.getElementById("settins_window").style.display="none";
     }
     function dropbtn()
     { 
       document.getElementById("dropdown-content1").style.display="block";
+
     }
 
     function aclick(l_index) //pickup language from div1
@@ -433,7 +438,7 @@ h2 {color: black;text-align: center;}
   </a>
     <div id="settins_window">
         <div class="dropdown1">
-        <button id="dropbtn"  onclick="dropbtn(0)">Preferences cookie</button>
+        <button id="dropbtn"  onclick="dropbtn()">Preferences cookie</button>
         <div id="dropdown-content1">
           <a href="javascript:display_settcard(0);">Preferences cookie</a>
           <a href="javascript:display_settcard(1);">Settings 2</a>

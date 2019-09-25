@@ -106,9 +106,9 @@
       document.getElementById("dropdown-content1").style.display = "none";
       settingscard[0].style.display = "none"; 
       settingscard[1].style.display = "none";
-      if (card_index == "0") 
+      if (card_index == 0) 
       settingscard[0].style.display = "block";
-      if (card_index == "1") 
+      if (card_index == 1) 
       settingscard[1].style.display = "block";
     }
    

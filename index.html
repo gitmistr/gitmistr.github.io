@@ -58,6 +58,7 @@
       if(cookie_sel==1) inp[0].checked = true;
       else  inp[1].checked = true;
       document.getElementById("settins_window").style.display="block";
+      document.getElementById("dropdown-content1").style.display="none";
       document.getElementById("dropbtn").innerHTML=btntext;
       settingscard[0].style.display = "block"; 
       settingscard[1].style.display = "none";
@@ -93,7 +94,14 @@
     }
     function dropbtn()
     { 
-      document.getElementById("dropdown-content1").style.display="block";
+      var dropdown_disp=document.getElementById("dropdown-content1").style.display;
+      document.getElementById("dropdown-content1").style.display="none";
+      if(dropdown_disp=="none")
+      {
+        document.getElementById("dropdown-content1").style.display="block";
+        //settingscard[0].style.display = "none";
+        //settingscard[1].style.display = "none";
+      }
 
     }
 
@@ -331,7 +339,7 @@ a.aicons{
   
  position: absolute;
  background-color:rosybrown;
-  margin-top: 55px;
+  margin-top: 65px;
   margin-left: 0px;
   height: 300px;width: 200px;
   display: none;

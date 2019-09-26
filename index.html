@@ -52,12 +52,13 @@
     {
       //document.getElementById("settings_img1").style.opacity = 1; 
       var inp=settingscard[0].getElementsByTagName("INPUT");
+      var btntext=settingscardlabel[0] + " "  + "&#9660";
       inp[0].checked = false;
       inp[1].checked = false;
       if(cookie_sel==1) inp[0].checked = true;
       else  inp[1].checked = true;
       document.getElementById("settins_window").style.display="block";
-      document.getElementById("dropbtn").innerHTML=settingscardlabel[0];
+      document.getElementById("dropbtn").innerHTML=btntext;
       settingscard[0].style.display = "block"; 
       settingscard[1].style.display = "none";
      
@@ -452,7 +453,7 @@ h2 {color: black;text-align: center;}
   </a>
     <div id="settins_window">
         <div class="dropdown1">
-        <button id="dropbtn"  onclick="dropbtn()">Preferences cookie</button>
+        <button id="dropbtn"  onclick="dropbtn()"></button>
         <div id="dropdown-content1">
           <a href="javascript:display_settcard(0);">Preferences cookie</a>
           <a href="javascript:display_settcard(1);">Settings 2</a>

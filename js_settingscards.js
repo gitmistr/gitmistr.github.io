@@ -1,7 +1,7 @@
 
     var settingscard = []; //settings menu cards
     var settingscardlabel = []; // text for setting card
-    settingscardlabel.push("Preferences cookies");
+    settingscardlabel.push("Preferences cookie");
     settingscardlabel.push("Settings 2");
     settingscardlabel.push("Settings 3");
     
@@ -102,13 +102,15 @@
     }
     function display_settcard(card_index) 
     {
-      document.getElementById("dropbtn").innerHTML=settingscardlabel[card_index];
+      var txtbtn= settingscardlabel[card_index]+" "+"&#9660" ;
+
+      document.getElementById("dropbtn").innerHTML=txtbtn;
       document.getElementById("dropdown-content1").style.display = "none";
       settingscard[0].style.display = "none"; 
       settingscard[1].style.display = "none";
       if (card_index == 0) 
-      settingscard[0].style.display = "block";
+       settingscard[0].style.display = "block";
       if (card_index == 1) 
-      settingscard[1].style.display = "block";
+       settingscard[1].style.display = "block";
     }
    

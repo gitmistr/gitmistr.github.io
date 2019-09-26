@@ -48,11 +48,15 @@
      txt = text_menu[l_index].txt_W;
      document.getElementById("a_work").innerHTML = txt;
     }
-    function settingsclick(opacit)
+    function settingsclick(i)
     {
       //document.getElementById("settings_img1").style.opacity = 1; 
       var inp=settingscard[0].getElementsByTagName("INPUT");
       var btntext=settingscardlabel[0] + " "  + "&#9660";
+      if(document.getElementById("settins_window").style.display=="block")
+       document.getElementById("settins_window").style.display="none";
+      else
+      {
       inp[0].checked = false;
       inp[1].checked = false;
       if(cookie_sel==1) inp[0].checked = true;
@@ -62,7 +66,7 @@
       document.getElementById("dropbtn").innerHTML=btntext;
       settingscard[0].style.display = "block"; 
       settingscard[1].style.display = "none";
-     
+      }
     }
     function settingsaccept(opacit)
     { var cvalue = "";
@@ -96,11 +100,12 @@
     { 
       var dropdown_disp=document.getElementById("dropdown-content1").style.display;
       document.getElementById("dropdown-content1").style.display="none";
+      settingscard[settingscardnum].style.display = "block";
       if(dropdown_disp=="none")
       {
         document.getElementById("dropdown-content1").style.display="block";
-        //settingscard[0].style.display = "none";
-        //settingscard[1].style.display = "none";
+        settingscard[0].style.display = "none";
+        settingscard[1].style.display = "none";
       }
 
     }

@@ -1,5 +1,5 @@
-
-    var settingscard = []; //settings menu cards
+    var settingscardnum = 0; //settings card number active
+    var settingscard = []; //settings cards objects
     var settingscardlabel = []; // text for setting card
     settingscardlabel.push("Preferences cookie");
     settingscardlabel.push("Settings 2");
@@ -103,14 +103,11 @@
     function display_settcard(card_index) 
     {
       var txtbtn= settingscardlabel[card_index]+" "+"&#9660" ;
-
+      settingscardnum=card_index;
       document.getElementById("dropbtn").innerHTML=txtbtn;
       document.getElementById("dropdown-content1").style.display = "none";
       settingscard[0].style.display = "none"; 
       settingscard[1].style.display = "none";
-      if (card_index == 0) 
-       settingscard[0].style.display = "block";
-      if (card_index == 1) 
-       settingscard[1].style.display = "block";
+      settingscard[settingscardnum].style.display = "block";
     }
    

@@ -215,6 +215,23 @@ function readcookie()
       </script>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+  $("#dropdown-content1 a").hover(function(){ 
+    $(this).css("background-color", "aquamarine");
+    $(this).css("border-color", "black");},function(){
+    $(this).css("background-color", "white");
+    $(this).css("border-color", "transparent");})
+
+  $(".dropdown-content a").hover(function(){ 
+    $(this).css("background-color", "aquamarine");
+    $(this).css("border-color", "black");},function(){
+    $(this).css("background-color", "whitesmoke");
+    $(this).css("border-color", "transparent");})
+ })
+</script>
+
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -309,12 +326,6 @@ body {
   border-width: 2px,2px,2px,2px;
 }
 
-.dropdown-content a:hover  {
-  background-color:aquamarine;;
-  border:black;
-  border-style: solid;
-  border-width: 2px,2px,2px,2px;
-}
 .divicons {
 display: block;
 margin-left: 0px;
@@ -425,16 +436,6 @@ fieldset {
 }
 
 .dropdown1:hover #dropbtn {background-color:crimson;} 
-
-
-
-#dropdown-content1 a:hover {
-  background-color:aquamarine;
-  border:black;
-  border-style: solid;
-  border-width: 2px,2px,2px,2px;
-  }
-
 
 h2 {color: black;text-align: center;}
 .box1style {float: left;width: 50%;padding: 5px;}

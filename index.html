@@ -204,6 +204,13 @@ function readcookie()
           scripttext = "javascript: aclick("+index+ "); void(0)";
           add_a (value,scripttext) ;     
         }
+        $(document).ready(function(){
+  $(".dropdown-content a").hover(function(){ 
+    $(this).css("background-color", "aquamarine");
+    $(this).css("border-color", "black");},function(){
+    $(this).css("background-color", "whitesmoke");
+    $(this).css("border-color", "transparent");})
+ })
       
      //add_a ("CES","javascript: aclick(0); void(0)") ;
      readcookie();
@@ -224,13 +231,7 @@ function readcookie()
     $(this).css("background-color", "white");
     $(this).css("border-color", "transparent");})
   })
-  $(document).ready(function(){
-  $(".dropdown-content a").hover(function(){ 
-    $(this).css("background-color", "aquamarine");
-    $(this).css("border-color", "black");},function(){
-    $(this).css("background-color", "whitesmoke");
-    $(this).css("border-color", "transparent");})
- })
+  
 </script>
 
 <style>

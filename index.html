@@ -194,6 +194,26 @@ function readcookie()
    
     
 }
+function eventhandlers()
+{
+  $(document).ready(function(){
+    $(".dropdown-content a").hover(function(){ 
+    $(this).css("background-color", "aquamarine");
+    $(this).css("border-color", "black");},function(){
+    $(this).css("background-color", "whitesmoke");
+    $(this).css("border-color", "transparent");})
+ })
+
+ $(document).ready(function(){
+  $("#dropdown-content1 a").hover(function(){ 
+    $(this).css("background-color", "aquamarine");
+    $(this).css("border-color", "black");},function(){
+    $(this).css("background-color", "white");
+    $(this).css("border-color", "transparent");})
+  })
+
+
+}
 
   function main()
    {
@@ -204,35 +224,22 @@ function readcookie()
           scripttext = "javascript: aclick("+index+ "); void(0)";
           add_a (value,scripttext) ;     
         }
-        $(document).ready(function(){
-  $(".dropdown-content a").hover(function(){ 
-    $(this).css("background-color", "aquamarine");
-    $(this).css("border-color", "black");},function(){
-    $(this).css("background-color", "whitesmoke");
-    $(this).css("border-color", "transparent");})
- })
+       
+  
       
      //add_a ("CES","javascript: aclick(0); void(0)") ;
      readcookie();
      create_settcard0(1);
      create_settcard1(0); 
      buildpage(language_index);
+     eventhandlers();
     
    }
       </script>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-  $(document).ready(function(){
-  $("#dropdown-content1 a").hover(function(){ 
-    $(this).css("background-color", "aquamarine");
-    $(this).css("border-color", "black");},function(){
-    $(this).css("background-color", "white");
-    $(this).css("border-color", "transparent");})
-  })
-  
-</script>
+
 
 <style>
 body {

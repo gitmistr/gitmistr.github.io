@@ -2,6 +2,7 @@
 <html>
     
   <script src="js_settingscards.js" type='text/javascript'></script> 
+  <script src="eventlisteners.js" type='text/javascript'></script> 
   <script> //Javascript code
     var language_index = 2; //select language, default language
     var cookie_sel = 1; //1 cookie on, 0 cookie off
@@ -194,60 +195,8 @@ function readcookie()
    
     
 }
-function mOver_a(ele)
-{
-    ele.style.backgroundColor = "aquamarine";
-    ele.style.borderColor = "black"; 
-}
-function mOut_a(ele)
-{
-    ele.style.backgroundColor = "whitesmoke";
-    ele.style.borderColor = "transparent";
-}
-function create_eventlisteners()
-{
-  var dropdown_el;
-  var i,subel;
 
-  dropdown_el =document.getElementsByClassName("navbar");
-      subel= dropdown_el[0].querySelectorAll("a");
-    for(i=0;i<subel.length;i++)
-     {
-      subel[i].addEventListener("mouseover",function()
-        { this.style.backgroundColor="red";})
-      subel[i].addEventListener("mouseout", function()
-        { this.style.backgroundColor="transparent";})
-    }
 
-    dropdown_el =document.getElementsByClassName("dropdown");
-    dropdown_el[0].addEventListener("mouseover",function()
-      {this.style.backgroundColor="red";})
-    dropdown_el[0].addEventListener("mouseout",function()
-      {this.style.backgroundColor="transparent";})
-
-  dropdown_el = document.getElementById("dropdown-content");
-  subel= dropdown_el.querySelectorAll("a");
-  for(i=0;i<subel.length;i++)
-    {
-      subel[i].addEventListener("mouseover",function(){mOver_a(this);})
-      subel[i].addEventListener("mouseout", function(){ mOut_a(this);})
-    }
-  dropdown_el = document.getElementById("dropdown-content1");
-  subel= dropdown_el.querySelectorAll("a");
-    for(i=0;i<subel.length;i++)
-     {
-      subel[i].addEventListener("mouseover",function(){ mOver_a(this);})
-      subel[i].addEventListener("mouseout", function(){ mOut_a(this);})
-    }
-
-    dropdown_el =document.getElementsByClassName("dropdown");
-    dropdown_el[0].addEventListener("mouseover",function()
-      {document.getElementById("dropdown-content").style.display="block";})
-    dropdown_el[0].addEventListener("mouseout",function()
-      {document.getElementById("dropdown-content").style.display="none";})
-
-     
-}
 
   function main()
    {
@@ -367,8 +316,7 @@ z-index: 1;
 }
 
 
-.divicons:hover  .divicons1
-{  opacity: 1;}
+
 
 
 a.aicons{
@@ -408,19 +356,6 @@ a.aicons{
   bottom: 0px;
 }
 
-
-
-
-
-
-
-
-
-a.aicons:hover 
-{
-  background-color: black;
-}
-
 fieldset {
       position:absolute;
       top:40px;
@@ -428,7 +363,7 @@ fieldset {
       background-color:white;
       
     }
-    .dropdown1 {
+    #dropdown1 {
   position: absolute;
   display: block;
 }
@@ -459,7 +394,7 @@ fieldset {
 }
 
 #dropbtn {
-  background-color: #4CAF50;
+  background-color:black;
   width:200px;
   height: 30px;
   color: white;
@@ -469,7 +404,7 @@ fieldset {
   cursor: pointer;
 }
 
-.dropdown1:hover #dropbtn {background-color:crimson;} 
+ 
 
 h2 {color: black;text-align: center;}
 .box1style {float: left;width: 50%;padding: 5px;}
@@ -500,7 +435,7 @@ h2 {color: black;text-align: center;}
     </div>
   </a>
     <div id="settins_window">
-        <div class="dropdown1">
+        <div id="dropdown1">
         <button id="dropbtn"  onclick="dropbtn()"></button>
         <div id="dropdown-content1">
           <a href="javascript:display_settcard(0);">Preferences cookie</a>

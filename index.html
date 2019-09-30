@@ -223,15 +223,13 @@ function create_eventlisteners()
       subel[i].addEventListener("mouseout", function(){ mOut_a(this);})
     }
 
-  
+    dropdown_el =document.getElementsByClassName("dropdown");
+    dropdown_el[0].addEventListener("mouseover",function()
+      {document.getElementById("dropdown-content").style.display="block";})
+    dropdown_el[0].addEventListener("mouseout",function()
+      {document.getElementById("dropdown-content").style.display="none";})
 
-  $(document).ready(function(){
-  $(".dropdown").hover(function(){ 
-    $("#dropdown-content").css("display", "block");}
-    ,function(){
-    $("#dropdown-content").css("display", "none");
-    })
-  })
+  
 }
 
   function main()
@@ -257,7 +255,7 @@ function create_eventlisteners()
       </script>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 
 
 <style>

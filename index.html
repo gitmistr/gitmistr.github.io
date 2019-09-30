@@ -208,6 +208,23 @@ function create_eventlisteners()
 {
   var dropdown_el;
   var i,subel;
+
+  dropdown_el =document.getElementsByClassName("navbar");
+      subel= dropdown_el[0].querySelectorAll("a");
+    for(i=0;i<subel.length;i++)
+     {
+      subel[i].addEventListener("mouseover",function()
+        { this.style.backgroundColor="red";})
+      subel[i].addEventListener("mouseout", function()
+        { this.style.backgroundColor="transparent";})
+    }
+
+    dropdown_el =document.getElementsByClassName("dropdown");
+    dropdown_el[0].addEventListener("mouseover",function()
+      {this.style.backgroundColor="red";})
+    dropdown_el[0].addEventListener("mouseout",function()
+      {this.style.backgroundColor="transparent";})
+
   dropdown_el = document.getElementById("dropdown-content");
   subel= dropdown_el.querySelectorAll("a");
   for(i=0;i<subel.length;i++)
@@ -229,7 +246,7 @@ function create_eventlisteners()
     dropdown_el[0].addEventListener("mouseout",function()
       {document.getElementById("dropdown-content").style.display="none";})
 
-  
+     
 }
 
   function main()
@@ -310,12 +327,6 @@ body {
   font-family: inherit;
   margin: 0;
 }
-
-
-.navbar a:hover, .dropdown:hover  {
-  background-color: red;}
-
-
 
 #dropdown-content {
   display: none;

@@ -134,7 +134,7 @@
       var paddiv = document.createElement("a");
        paddiv.innerHTML = text;
       paddiv.setAttribute('href', txt_script);
-      document.getElementById("divlangs").appendChild(paddiv);
+      document.getElementById("dropdown-content").appendChild(paddiv);
      }
 
   function setCookie(cname,cvalue,exdays) {
@@ -194,25 +194,44 @@ function readcookie()
    
     
 }
-function eventhandlers()
+function mOver_a(ele)
 {
+    ele.style.backgroundColor = "aquamarine";
+    ele.style.borderColor = "black"; 
+}
+function mOut_a(ele)
+{
+    ele.style.backgroundColor = "whitesmoke";
+    ele.style.borderColor = "transparent";
+}
+function create_eventlisteners()
+{
+  var dropdown_el;
+  var i,subel;
+  dropdown_el = document.getElementById("dropdown-content");
+  subel= dropdown_el.querySelectorAll("a");
+  for(i=0;i<subel.length;i++)
+    {
+      subel[i].addEventListener("mouseover",function(){mOver_a(this);})
+      subel[i].addEventListener("mouseout", function(){ mOut_a(this);})
+    }
+  dropdown_el = document.getElementById("dropdown-content1");
+  subel= dropdown_el.querySelectorAll("a");
+    for(i=0;i<subel.length;i++)
+     {
+      subel[i].addEventListener("mouseover",function(){ mOver_a(this);})
+      subel[i].addEventListener("mouseout", function(){ mOut_a(this);})
+    }
+
+  
+
   $(document).ready(function(){
-    $(".dropdown-content a").hover(function(){ 
-    $(this).css("background-color", "aquamarine");
-    $(this).css("border-color", "black");},function(){
-    $(this).css("background-color", "whitesmoke");
-    $(this).css("border-color", "transparent");})
- })
-
- $(document).ready(function(){
-  $("#dropdown-content1 a").hover(function(){ 
-    $(this).css("background-color", "aquamarine");
-    $(this).css("border-color", "black");},function(){
-    $(this).css("background-color", "white");
-    $(this).css("border-color", "transparent");})
+  $(".dropdown").hover(function(){ 
+    $("#dropdown-content").css("display", "block");}
+    ,function(){
+    $("#dropdown-content").css("display", "none");
+    })
   })
-
-
 }
 
   function main()
@@ -232,7 +251,7 @@ function eventhandlers()
      create_settcard0(1);
      create_settcard1(0); 
      buildpage(language_index);
-     eventhandlers();
+     create_eventlisteners();
     
    }
       </script>
@@ -294,16 +313,13 @@ body {
   margin: 0;
 }
 
+
 .navbar a:hover, .dropdown:hover  {
   background-color: red;}
 
-.dropdown:hover .dropdown-content
-{
-  display: block;
-}
 
 
-.dropdown-content {
+#dropdown-content {
   display: none;
   position:absolute;
   width: 140px;
@@ -320,7 +336,7 @@ body {
 }
 
 
-.dropdown-content a {
+#dropdown-content a {
   width:25px;
   height: 12px;
   float:right;
@@ -495,7 +511,7 @@ h2 {color: black;text-align: center;}
   <a id ="a_work" href="https://new.siemens.com/cz/cs.html">Práce</a>
   <div  id = "divlang" class="dropdown" >  
       <a id = "asel" href="#">CES</a>
-    <div id = "divlangs" class="dropdown-content"></div>
+    <div id="dropdown-content"></div>
   </div> 
 </div>
 <h2 id="pg_welcome">Vítejte na moji webové stránce</h2>

@@ -14,10 +14,6 @@ function create_eventsfunctions()
   var dropdown_el;
   var i,subel;
 
-    dropdown_el =document.getElementsByClassName("dropdown");
-    dropdown_el[0].onmouseover=function(){this.style.backgroundColor="red";};
-    dropdown_el[0].onmouseout=function() {this.style.backgroundColor="transparent";};
-
   dropdown_el = document.getElementById("dropdown-content");
   subel= dropdown_el.querySelectorAll("a");
   for(i=0;i<subel.length;i++)
@@ -35,9 +31,11 @@ function create_eventsfunctions()
 
     dropdown_el =document.getElementsByClassName("dropdown");
     dropdown_el[0].onmouseover=function()
-      {document.getElementById("dropdown-content").style.display="block";};
+      {document.getElementById("dropdown-content").style.display="block";
+       this.style.backgroundColor="red";};
     dropdown_el[0].onmouseout=function()
-      {document.getElementById("dropdown-content").style.display="none";};
+      {document.getElementById("dropdown-content").style.display="none";
+        this.style.backgroundColor="transparent";};
 
       dropdown_el =document.getElementsByClassName("divicons");
     for(i=0;i<dropdown_el.length;i++)

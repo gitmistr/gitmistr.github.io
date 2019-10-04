@@ -11,38 +11,38 @@ function mOut_a(ele)
 
 function create_eventsfunctions()
 {
-  var dropdown_el;
-  var i,subel;
+  var element,subelement;
+  var i;
 
-  dropdown_el = document.getElementById("dropdown-content");
-  subel= dropdown_el.querySelectorAll("a");
-  for(i=0;i<subel.length;i++)
+  element = document.getElementById("dropdown-content");
+  subelement= element.querySelectorAll("a");
+  for(i=0;i<subelement.length;i++)
     {
-      subel[i].onmouseover=function(){mOver_a(this);};
-      subel[i].onmouseout=function(){ mOut_a(this);};
+      subelement[i].onmouseover=function(){mOver_a(this);};
+      subelement[i].onmouseout=function(){ mOut_a(this);};
     }
-  dropdown_el = document.getElementById("dropdown-content1");
-  subel= dropdown_el.querySelectorAll("a");
-    for(i=0;i<subel.length;i++)
+    element = document.getElementById("dropdown-content1");
+    subelement= element.querySelectorAll("a");
+    for(i=0;i<subelement.length;i++)
      {
-      subel[i].onmouseover=function(){ mOver_a(this);};
-      subel[i].onmouseout=function(){ mOut_a(this);};
+      subelement[i].onmouseover=function(){ mOver_a(this);};
+      subelement[i].onmouseout=function(){ mOut_a(this);};
     }
 
-    dropdown_el =document.getElementsByClassName("dropdown");
-    dropdown_el[0].onmouseover=function()
+    element =document.getElementsByClassName("dropdown");
+    element[0].onmouseover=function()
       {document.getElementById("dropdown-content").style.display="block";
        this.style.backgroundColor="red";};
-    dropdown_el[0].onmouseout=function()
+       element[0].onmouseout=function()
       {document.getElementById("dropdown-content").style.display="none";
         this.style.backgroundColor="transparent";};
 
-      dropdown_el =document.getElementsByClassName("divicons");
-    for(i=0;i<dropdown_el.length;i++)
+        element =document.getElementsByClassName("divicons");
+    for(i=0;i<element.length;i++)
     {
-      subel = dropdown_el[i].getElementsByClassName("divicons1");
-      subel[0].onmouseover=function(){this.style.opacity = "1";};
-      subel[0].onmouseout=function(){this.style.opacity = "0";};
+      subelement = element[i].getElementsByClassName("divicons1");
+      subelement[0].onmouseover=function(){this.style.opacity = "1";};
+      subelement[0].onmouseout=function(){this.style.opacity = "0";};
     }
     
   document.getElementById("a_flat").onmouseover=function()
@@ -60,6 +60,8 @@ function create_eventsfunctions()
   document.getElementById("dropdown1").onmouseout=function()
     {document.getElementById("dropbtn").style.backgroundColor="black";};  
         
-
+    element=document.getElementById("buttquit");
+    element.onmouseover=function(){this.style.backgroundColor="red";};
+    element.onmouseout=function(){this.style.backgroundColor="green";};
      
 }

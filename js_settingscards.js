@@ -2,10 +2,31 @@
     var settingscard = []; //settings cards objects
     var settingscardlabel = []; // text for setting card
     settingscardlabel.push("Preferences cookie");
-    settingscardlabel.push("Settings 2");
+    settingscardlabel.push("Background color");
     settingscardlabel.push("Settings 3");
     
+    function settcard0_action(chkbox0,chkbox1)
+    {
+      if(chkbox0 == true)
+      {
+        if(cookie_sel==0) //cookie disabled?
+        {//coookie enable
+        cookie_sel=1; //enable cookie, write settings to cookie
+        cvalue = language_index.toString();
+        setCookie("cookie#1", cvalue, 30);
+        }
+      }
+     if(chkbox1== true) //cookie disabled
+      {
+        if(cookie_sel==1) //cookie enabeld?
+       { //delete cookie
+         cookie_sel=0;
+         cvalue = "65535";
+         setCookie("cookie#1", cvalue, 30);
+        }
 
+      }
+    }
     function Chxbox_rule0(boxindex)  
      {  
       var inp=settingscard[0].getElementsByTagName("INPUT");
@@ -13,14 +34,18 @@
       {
         inp[1].checked = false;
         inp[0].checked = true; 
+        settcard0_action(true,false);
       }
       if(boxindex==1)
      {
       inp[0].checked = false;
-      inp[1].checked = true;    
+      inp[1].checked = true;  
+      settcard0_action(false,true);
+      
     }
-  
+       
     }
+
     function Chxbox_rule1(boxindex)  
      {  
       var inp=settingscard[1].getElementsByTagName("INPUT");
@@ -78,9 +103,9 @@
      var leg = document.createElement("legend");
      var i =0,input_el,text_el;
      var vartext = [];
-     vartext.push("Prop. 1(TBD) <br>");
-     vartext.push("Prop. 2(TBD)  <br>");
-     vartext.push("Prop. 3(TBD)  <br>");
+     vartext.push("White <br>");
+     vartext.push("Black  <br>");
+     vartext.push("Grey  <br>");
      settingscard[1].setAttribute("id", "field1");
      settingscard[1].style.display = "none";
      if(disp>0) settingscard[1].style.display = "block";

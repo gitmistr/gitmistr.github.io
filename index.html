@@ -121,8 +121,7 @@
       case 3 : l_code="DEU"; break;
      }
       language_index = l_index;
-      cvalue = language_index.toString();
-      //user = prompt(language,"");
+      cvalue=values_to_Cstring();
       if(cookie_sel==1)
         setCookie("cookie#1", cvalue, 30);
       document.getElementById("asel").innerHTML = l_code;
@@ -137,12 +136,15 @@
       document.getElementById("dropdown-content").appendChild(paddiv);
      }
 
-  function setCookievalue()
-  {
-    var intcvalue = 0; 
-    var cvalue = "";
-    
-  }
+function values_to_Cstring()
+{
+  var cvalue = "",hex="";
+  hex = language_index.toString(16).toUpperCase();
+  cvalue = hex + ".";
+  hex = color_index.toString(16).toUpperCase();
+  cvalue = cvalue + hex + ".";
+  return cvalue;
+}
 
   function setCookie(cname,cvalue,exdays) {
   var d = new Date();
@@ -189,13 +191,34 @@ function clickcookie(sel)
 function readcookie()
 
 {
-  var cvalueint = 0;
-    var cvalue=getCookie("cookie#1");
-    cvalueint= parseInt(cvalue,10);
-    if(cvalueint<4 && cvalueint>=0)
-      language_index = cvalueint;    
-    if(cvalueint==65535)
-      cookie_sel = 0;   
+  var i,c,substring="",decoded=[],decnumbers=[];
+  var cvalue=getCookie("cookie#1");
+  if(cvalue.length<3)
+  {//cookie empty
+    return;
+  }
+  if( cvalue== "DELETED")
+  { //cookie disabled
+    cookie_sel = 0;
+    return;
+  }
+  
+  
+  for(i = 0;i<cvalue.length;i++)
+  { 
+    c=cvalue[i];
+    if(c==".")
+    {
+      decoded.push(substring);
+      substring="";
+      c="";
+      //i++;
+    }
+    substring = substring + c;
+    }
+    language_index = parseInt(decoded[0], 16);
+    color_index = parseInt(decoded[1], 16);
+    cookie_sel = 1;
 }
 
 

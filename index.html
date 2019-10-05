@@ -195,12 +195,12 @@ function readcookie()
   var cvalue=getCookie("cookie#1");
   if(cvalue.length<3)
   {//cookie empty
-    return;
+    return(0);
   }
   if( cvalue== "DELETED")
   { //cookie disabled
     cookie_sel = 0;
-    return;
+    return(1);
   }
   
   
@@ -219,6 +219,7 @@ function readcookie()
     language_index = parseInt(decoded[0], 16);
     color_index = parseInt(decoded[1], 16);
     cookie_sel = 1;
+    return(2);
 }
 
 
@@ -226,6 +227,7 @@ function readcookie()
   function main()
    {
      var scripttext="",l_code="";
+     var cvalue=values_to_Cstring();
      lang_codes.forEach(add_pad); 
       function add_pad(value, index, array) 
         {
@@ -236,7 +238,8 @@ function readcookie()
   
       
      //add_a ("CES","javascript: aclick(0); void(0)") ;
-     readcookie();
+     if(readcookie()==0) //cookie empty
+      {if(cookie_sel==1) setCookie("cookie#1", cvalue, 30);}
      create_settcard0(1);
      create_settcard1(0); 
      

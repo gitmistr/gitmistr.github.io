@@ -12,7 +12,7 @@
         if(cookie_sel==0) //cookie disabled?
         {//coookie enable
         cookie_sel=1; //enable cookie, write settings to cookie
-        cvalue = language_index.toString();
+        cvalue=values_to_Cstring();
         setCookie("cookie#1", cvalue, 30);
         }
       }
@@ -21,7 +21,7 @@
         if(cookie_sel==1) //cookie enabeld?
        { //delete cookie
          cookie_sel=0;
-         cvalue = "65535";
+         cvalue = "DELETED";
          setCookie("cookie#1", cvalue, 30);
         }
 

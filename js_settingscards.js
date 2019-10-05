@@ -5,7 +5,7 @@
     settingscardlabel.push("Background color");
     settingscardlabel.push("Settings 3");
     
-    function settcard0_action(chkbox0,chkbox1)
+    function settcard0_action(chkbox0,chkbox1) //cookie selection sett. card
     {
       if(chkbox0 == true)
       {
@@ -27,6 +27,15 @@
 
       }
     }
+    function settcard1_action(new_index) //background color settings card
+    {
+      if(new_index == color_index) return;
+      color_index=new_index;
+      cvalue=values_to_Cstring();
+      if(cookie_sel==1)  setCookie("cookie#1", cvalue, 30);
+      mywebcolors();
+    }
+
     function Chxbox_rule0(boxindex)  
      {  
       var inp=settingscard[0].getElementsByTagName("INPUT");
@@ -52,12 +61,23 @@
       if(boxindex==0)
       {
         inp[1].checked = false;
+        inp[2].checked = false;
         inp[0].checked = true;
+        settcard1_action(0);
       }
       if(boxindex==1)
      {
       inp[0].checked = false;
+      inp[2].checked = false;
       inp[1].checked = true;
+      settcard1_action(1);
+    }
+    if(boxindex==2)
+     {
+      inp[0].checked = false;
+      inp[1].checked = false;
+      inp[2].checked = true;
+      settcard1_action(2);
     }
   
     }    
@@ -116,6 +136,8 @@
      {
       text_el=document.createElement("text"); 
       input_el=document.createElement("INPUT");
+      input_el.checked = false;
+      if(i==color_index) input_el.checked = true;
       input_el.setAttribute("type", "checkbox");
       input_el.setAttribute("onClick", "Chxbox_rule1("+i+")");
       text_el.innerHTML = vartext[i];

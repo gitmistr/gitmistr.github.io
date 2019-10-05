@@ -123,9 +123,9 @@
      var leg = document.createElement("legend");
      var i =0,input_el,text_el;
      var vartext = [];
-     vartext.push("White <br>");
-     vartext.push("Black  <br>");
-     vartext.push("Grey  <br>");
+     vartext.push("whitesmoke <br>");
+     vartext.push("black  <br>");
+     vartext.push("grey  <br>");
      settingscard[1].setAttribute("id", "field1");
      settingscard[1].style.display = "none";
      if(disp>0) settingscard[1].style.display = "block";

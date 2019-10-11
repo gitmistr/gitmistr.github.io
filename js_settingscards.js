@@ -136,7 +136,7 @@
      var vartext = [];
      vartext.push("whitesmoke <br>");vartext.push("black  <br>");
      vartext.push("grey  <br>");vartext.push("rosybrown  <br>");
-     vartext.push("blue  <br>");vartext.push("green  <br>");
+     vartext.push("blue  <br>");vartext.push("olive  <br>");
      settingscard[1].setAttribute("id", "field1");
      settingscard[1].style.display = "none";
      if(disp>0) settingscard[1].style.display = "block";

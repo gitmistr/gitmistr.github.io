@@ -50,10 +50,7 @@ function create_eventsfunctions()
   document.getElementById("a_flat").onmouseout=function()
       {this.style.backgroundColor="transparent";};
 
-  document.getElementById("a_work").onmouseover=function()
-      {this.style.backgroundColor="red";};
-  document.getElementById("a_work").onmouseout=function()
-      {this.style.backgroundColor="transparent";};    
+  
 
   document.getElementById("dropdown1").onmouseover=function()
     {document.getElementById("dropbtn").style.backgroundColor="red";};

@@ -59,8 +59,7 @@
      document.getElementById("pg_welcome").innerHTML = txt;
      txt = text_menu[l_index].txt_F;
      document.getElementById("a_flat").innerHTML = txt;
-     txt = text_menu[l_index].txt_W;
-     document.getElementById("a_work").innerHTML = txt;
+     
     }
     function mywebcolors()
    {
@@ -474,6 +473,15 @@ h2 {text-align: center;}
     </div>
   </a>
   
+  <a  class="aicons" href="#">
+    <div class="divicons">
+        <img  src="menu.jpg" height="55px" width="60px"> </img>
+        <div id="settings_img1" class="divicons1">
+            <img  src="menu1.jpg" height="55px" width="60px"> </img>
+        </div>          
+    </div>
+  </a>
+
   <a  class="aicons" href="javascript: settingsclick(1); void(0)">
     <div class="divicons">
         <img  src="tools.jpg" height="55px" width="60px"> </img>
@@ -482,6 +490,9 @@ h2 {text-align: center;}
         </div>          
     </div>
   </a>
+
+  
+  
     <div id="settins_window">
         <div id="dropdown1">
         <button id="dropbtn"  onclick="dropbtn()"></button>
@@ -497,7 +508,7 @@ h2 {text-align: center;}
   
    
   
-  <a id ="a_work" href="https://new.siemens.com/cz/cs.html">Práce</a>
+  
   <a id ="a_flat" href="byt_info.html">Byt</a>
   <div  id = "divlang" class="dropdown" >  
       <a id = "asel" href="#">CES</a>

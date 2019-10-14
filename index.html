@@ -386,8 +386,7 @@ a.aicons{
   
  position: absolute;
  background-color:rosybrown;
-  top: 72px;
-  left: 7px;
+  
   height: 300px;width: 200px;
   display: none;
   border:silver;
@@ -451,7 +450,24 @@ fieldset {
   cursor: pointer;
 }
 
- 
+.vertical-menu {
+  position: absolute;
+  display: none;
+  width: 200px;
+  height: 150px;
+  overflow-y: auto;
+  border:silver;
+  border-style:solid;
+  border-width: 2px,2px,2px,2px;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
 
 h2 {text-align: center;}
 .box1style {width: 50%; margin: auto;}
@@ -498,8 +514,9 @@ h2 {text-align: center;}
       <a id = "asel" href="#">CES</a>
     <div id="dropdown-content"></div>
   </div> 
-</div>
 
+  
+</div>
 <div id="settins_window">
   <div id="dropdown1">
   <button id="dropbtn"  onclick="dropbtn()"></button>
@@ -512,6 +529,21 @@ h2 {text-align: center;}
   <div id ="aftermenu"></div> 
 <button id="buttquit" onclick="settingsquit()">&#9668</button>
 </div> 
+
+<div class="vertical-menu">
+  <a href="#" class="active">Home</a>
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
+  <a href="#">Link 3</a>
+  <a href="#">Link 4</a>
+  <a href="#">Link 5</a>
+  <a href="#">Link 6</a>
+  <a href="#">Link 7</a>
+  <a href="#">Link 8</a>
+  <a href="#">Link 9</a>
+  <a href="#">Link 10</a>
+</div>
+
 
 <h2 id="pg_welcome">Vítejte na moji webové stránce</h2>
 <div class="clearfix">

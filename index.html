@@ -80,6 +80,7 @@
        document.getElementById("settins_window").style.display="none";
       else
       {
+      vmenuquit();
       inp[0].checked = false;
       inp[1].checked = false;
       if(cookie_sel==1) inp[0].checked = true;
@@ -92,6 +93,19 @@
       settingscard[2].style.display = "none";
       }
     }
+
+    function vmenuclick(i)
+    {
+      if(document.getElementById("vertical-menu").style.display=="block")
+      {
+       document.getElementById("vertical-menu").style.display="none";
+      }
+       else
+       {
+        document.getElementById("vertical-menu").style.display="block";
+        settingsquit();
+       }
+    }
     
     function settingsquit()
     { 
@@ -101,6 +115,11 @@
      
       //document.getElementById("settings_img1").style.opacity = 0; 
       document.getElementById("settins_window").style.display="none";
+    }
+
+    function vmenuquit()
+    { 
+      document.getElementById("vertical-menu").style.display="none";
     }
     function dropbtn()
     { 
@@ -450,20 +469,21 @@ fieldset {
   cursor: pointer;
 }
 
-.vertical-menu {
+#vertical-menu {
   position: absolute;
+  background-color: black;
   display: none;
   width: 200px;
-  height: 150px;
+  height: 300px;
   overflow-y: auto;
   border:silver;
   border-style:solid;
   border-width: 2px,2px,2px,2px;
 }
 
-.vertical-menu a {
-  background-color: #eee;
-  color: black;
+#vertical-menu a {
+ 
+  color:whitesmoke;
   display: block;
   padding: 12px;
   text-decoration: none;
@@ -489,7 +509,7 @@ h2 {text-align: center;}
     </div>
   </a>
   
-  <a  class="aicons" href="#">
+  <a  class="aicons" href="javascript: vmenuclick(1); void(0)">
     <div class="divicons">
         <img  src="menu.jpg" height="55px" width="60px"> </img>
         <div id="settings_img1" class="divicons1">
@@ -530,8 +550,7 @@ h2 {text-align: center;}
 <button id="buttquit" onclick="settingsquit()">&#9668</button>
 </div> 
 
-<div class="vertical-menu">
-  <a href="#" class="active">Home</a>
+<div id="vertical-menu">
   <a href="#">Link 1</a>
   <a href="#">Link 2</a>
   <a href="#">Link 3</a>

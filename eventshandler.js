@@ -14,6 +14,14 @@ function create_eventsfunctions()
   var element,subelement;
   var i;
 
+  element = document.getElementById("vertical-menu");
+  subelement= element.querySelectorAll("a");
+  for(i=0;i<subelement.length;i++)
+    {
+      subelement[i].onmouseover=function(){this.style.backgroundColor="red";};
+      subelement[i].onmouseout=function(){ this.style.backgroundColor="black";};
+    }
+
   element = document.getElementById("dropdown-content");
   subelement= element.querySelectorAll("a");
   for(i=0;i<subelement.length;i++)

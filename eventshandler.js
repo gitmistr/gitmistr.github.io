@@ -48,9 +48,8 @@ function create_eventsfunctions()
         element =document.getElementsByClassName("divicons");
     for(i=0;i<element.length;i++)
     {
-      subelement = element[i].getElementsByClassName("divicons1");
-      subelement[0].onmouseover=function(){this.style.opacity = "1";};
-      subelement[0].onmouseout=function(){this.style.opacity = "0";};
+      element[i].onmouseover=function(){this.style.backgroundColor = "red";};
+      element[i].onmouseout=function(){this.style.backgroundColor = "yellowgreen";};
     }
     
   document.getElementById("a_flat").onmouseover=function()

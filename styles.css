@@ -92,6 +92,7 @@ body {
   
   .divicons {
   display: block;
+  background-color:yellowgreen;
   margin-left: 0px;
   z-index: 1;
   }
@@ -102,6 +103,7 @@ body {
   
   a.aicons{
     padding: 0px;
+    background-color: transparent;
     float: left ;
     margin-right:3px;
     height: 55px;

@@ -28,7 +28,7 @@
       elpays.push({ id: " 9, 2019", m: 1000, n:1100 });
       elpays.push({ id: "10, 2019", m: 1000, n:2200 });
       elpays.push({ id: "11, 2019", m: 1000, n: 0 });
-      elpays.push({ id: "12, 2019", m: 0, n: 0 });
+      elpays.push({ id: "12, 2019", m: 1000, n: 1100 });
       elpays.push({ id: " 1, 2020", m: 0, n: 0 });
       elpays.push({ id: " 2, 2020", m: 0, n: 0 });
       elpays.push({ id: " 3, 2020", m: 0, n: 0 });
@@ -40,8 +40,8 @@
       plpays.push({ id: " 8, 2019", m: 150, n: 300 });
       plpays.push({ id: " 9, 2019", m: 150, n: 300 });
       plpays.push({ id: "10, 2019", m: 150, n: 600 });
-      plpays.push({ id: "11, 2019", m: 150, n: 0 });
-      plpays.push({ id: "12, 2019", m: 0, n: 0 });
+      plpays.push({ id: "11, 2019", m: 0, n: 0 });
+      plpays.push({ id: "12, 2019", m: 0, n: 300 });
       plpays.push({ id: " 1, 2020", m: 0, n: 0 });
       plpays.push({ id: " 2, 2020", m: 0, n: 0 });
       plpays.push({ id: " 3, 2020", m: 0, n: 0 });
@@ -54,7 +54,7 @@
       enpays.push({ id: " 9, 2019", m: 2426, n: 2426 });
       enpays.push({ id: "10, 2019", m: 2426, n: 4852 });
       enpays.push({ id: "11, 2019", m: 2426, n: 0 });
-      enpays.push({ id: "12, 2019", m: 0, n: 0 });
+      enpays.push({ id: "12, 2019", m: 2426, n: 2426 });
       enpays.push({ id: " 1, 2020", m: 0, n: 0 });
       enpays.push({ id: " 2, 2020", m: 0, n: 0 });
       enpays.push({ id: " 3, 2020", m: 0, n: 0 });
@@ -66,9 +66,9 @@
       <script> 
       //vypocty preplatku resp. doplatku z databaze plateb
       // Create an object: suma plateb 
-      var elrek_suma = {dif: 0,sign: "Přeplatek"}; //rekonstrukce elektrika 
-      var svrek_suma = {dif: 0,sign: "Přeplatek"}; //rekonstrukce SV
-      var tvrek_suma = {dif: 0,sign: "Přeplatek"}; //rekonstrukce TV
+      var elrek_suma = {dif: 275,sign: "Přeplatek"}; //rekonstrukce elektrika 
+      var svrek_suma = {dif: 100,sign: "Přeplatek"}; //rekonstrukce SV
+      var tvrek_suma = {dif: 45,sign: "Přeplatek"}; //rekonstrukce TV
       var el_suma = {m: 0,n: 0,dif: 0,sign: "Přeplatek"};  
       var pl_suma = {m: 0,n: 0,dif: 0,sign: "Přeplatek"}; 
       var en_suma = {m: 0,n: 0,dif: 0,sign: "Přeplatek"}; 

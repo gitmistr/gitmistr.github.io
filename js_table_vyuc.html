@@ -15,7 +15,7 @@
          </style>   
      </head>
     <script>
-      var Zobdobi = "Zúčtovací období : od 1.7 2019 do 30.6 2020";
+      var Zobdobi = "Zúčtovací období : od 1.7 2020 do 30.6 2021";
       //personal data and account numbers defined in personaldata.js 
       var Pronajimatel = "",Najemce = "",adresa = "",accPron = "",accNaj = "";
       // deklarace pole plateb
@@ -23,46 +23,46 @@
       var enpays = []; //Platby energie, pole
       var plpays = []; //Platby plyn, pole
       // Databaze vsech plateb za elektriku, m majitel, n najemce
-      elpays.push({ id: " 7, 2019", m: 1000, n: 1100 });
-      elpays.push({ id: " 8, 2019", m: 1000, n: 1100 });
-      elpays.push({ id: " 9, 2019", m: 1000, n:1100 });
-      elpays.push({ id: "10, 2019", m: 1000, n:2200 });
-      elpays.push({ id: "11, 2019", m: 1000, n: 0 });
-      elpays.push({ id: "12, 2019", m: 1000, n: 1100 });
-      elpays.push({ id: " 1, 2020", m: 1000, n: 1100 });
-      elpays.push({ id: " 2, 2020", m: 1000, n: 1100 });
-      elpays.push({ id: " 3, 2020", m: 0, n: 1100 });
-      elpays.push({ id: " 4, 2020", m: 0, n: 1100 });
-      elpays.push({ id: " 4, 2020 Preplatek, Faktura CEZ", m: -3403, n: 0 });
-      elpays.push({ id: " 5, 2020", m: 560, n: 1100 });
-      elpays.push({ id: " 6, 2020", m: 560, n: 1100 });
+      elpays.push({ id: " 7, 2019", m: 560, n: 1100 });
+      elpays.push({ id: " 8, 2019", m: 0, n: 0 });
+      elpays.push({ id: " 9, 2019", m: 0, n:0 });
+      elpays.push({ id: "10, 2019", m: 0, n:0 });
+      elpays.push({ id: "11, 2019", m: 0, n: 0 });
+      elpays.push({ id: "12, 2019", m: 0, n: 0 });
+      elpays.push({ id: " 1, 2020", m: 0, n: 0 });
+      elpays.push({ id: " 2, 2020", m: 0, n: 0 });
+      elpays.push({ id: " 3, 2020", m: 0, n: 0 });
+      elpays.push({ id: " 4, 2020", m: 0, n: 0 });
+      elpays.push({ id: " 4, 2020 Preplatek, Faktura CEZ", m: 0, n: 0 });
+      elpays.push({ id: " 5, 2020", m: 0, n: 0 });
+      elpays.push({ id: " 6, 2020", m: 0, n: 0 });
       // Databaze vsech plateb za plyn, m majitel, n najemce
       plpays.push({ id: " 7, 2019", m: 150, n: 300 });
-      plpays.push({ id: " 8, 2019", m: 150, n: 300 });
-      plpays.push({ id: " 9, 2019", m: 150, n: 300 });
-      plpays.push({ id: "10, 2019", m: 150, n: 600 });
+      plpays.push({ id: " 8, 2019", m: 0, n: 0 });
+      plpays.push({ id: " 9, 2019", m: 0, n: 0 });
+      plpays.push({ id: "10, 2019", m: 0, n: 0 });
       plpays.push({ id: "11, 2019", m: 0, n: 0 });
-      plpays.push({ id: "12, 2019", m: 150, n: 300 });
-      plpays.push({ id: " 1, 2020", m: 150, n: 300 });
-      plpays.push({ id: " 2, 2020", m: 150, n: 300 });
-      plpays.push({ id: " 3, 2020", m: 150, n: 300 });
-      plpays.push({ id: " 4, 2020", m: 150, n: 300 });
-      plpays.push({ id: " 5, 2020", m: 150, n: 300 });
-      plpays.push({ id: " 6, 2020", m: 150, n: 300 });
+      plpays.push({ id: "12, 2019", m: 0, n: 0 });
+      plpays.push({ id: " 1, 2020", m: 0, n: 0 });
+      plpays.push({ id: " 2, 2020", m: 0, n: 0 });
+      plpays.push({ id: " 3, 2020", m: 0, n: 0 });
+      plpays.push({ id: " 4, 2020", m: 0, n: 0 });
+      plpays.push({ id: " 5, 2020", m: 0, n: 0 });
+      plpays.push({ id: " 6, 2020", m: 0, n: 0 });
       // Databaze vsech plateb za energie, m majitel, n najemce
       enpays.push({ id: " 7, 2019", m: 2426, n: 2426 });
-      enpays.push({ id: " 8, 2019", m: 2426, n: 2426 });
-      enpays.push({ id: " 9, 2019", m: 2426, n: 2426 });
-      enpays.push({ id: "10, 2019", m: 2426, n: 4852 });
-      enpays.push({ id: "11, 2019", m: 2426, n: 0 });
-      enpays.push({ id: "12, 2019", m: 2426, n: 2426 });
-      enpays.push({ id: " 1, 2020", m: 2426, n: 2426 });
-      enpays.push({ id: " 2, 2020", m: 2426, n: 2426 });
-      enpays.push({ id: " 3, 2020", m: 2426, n: 2426 });
-      enpays.push({ id: " 4, 2020", m: 2426, n: 2426 });
-      enpays.push({ id: " 4, 2020, Přeplatek vyučtovani SVJ za 2019", m: -4661, n: 0 });
-      enpays.push({ id: " 5, 2020", m: 2426, n: 2426 });
-      enpays.push({ id: " 6, 2020", m: 2426, n: 2426 });
+      enpays.push({ id: " 8, 2019", m: 0, n: 0 });
+      enpays.push({ id: " 9, 2019", m: 0, n: 0 });
+      enpays.push({ id: "10, 2019", m: 0, n: 0 });
+      enpays.push({ id: "11, 2019", m: 0, n: 0 });
+      enpays.push({ id: "12, 2019", m: 0, n: 0 });
+      enpays.push({ id: " 1, 2020", m: 0, n: 0 });
+      enpays.push({ id: " 2, 2020", m: 0, n: 0 });
+      enpays.push({ id: " 3, 2020", m: 0, n: 0 });
+      enpays.push({ id: " 4, 2020", m: 0, n: 0 });
+      enpays.push({ id: " 4, 2020, Přeplatek vyučtovani SVJ za 2019", m: 0, n: 0 });
+      enpays.push({ id: " 5, 2020", m: 0, n: 0 });
+      enpays.push({ id: " 6, 2020", m: 0, n: 0 });
     </script>
       <script src="personaldata.js" type='text/javascript'></script> 
       <script> 
@@ -98,11 +98,11 @@
       { ov_suma.sign = "Doplatek";
       ov_text="Celkový doplatek, " + Math.abs(ov_suma.dif).toFixed(0);  
       ov_text=ov_text+" Kč, bude uhrazen nájemcem na účet pronajímatele," 
-      ov_text=ov_text+" č.účtu " +accPron+  " nejpozději do 30.7 2020";}
+      ov_text=ov_text+" č.účtu " +accPron+  " nejpozději do 30.7 2021";}
       else{
       ov_text = "Celkový přeplatek, " + Math.abs(ov_suma.dif).toFixed(0);
       ov_text=ov_text+" Kč, bude uhrazen pronajímatelem na  účet nájemce";
-      ov_text=ov_text+" č.účtu " +accNaj+   " nejpozději do 30.7 2020";}
+      ov_text=ov_text+" č.účtu " +accNaj+   " nejpozději do 30.7 2021";}
   </script>
 
 
@@ -175,21 +175,21 @@
     addCell(tr,Math.abs(en_suma.dif)+ " Kč","1","text-align:left");
     addCell(tr,en_suma.sign,"1","text-align:left");
     tbl.appendChild(tr);
-    var tr = document.createElement('tr'); //new  row
-    addCell(tr,"Rekonstrukce: elektrická energie","1","text-align:left");
-    addCell(tr,Math.abs(elrek_suma.dif)+ " Kč","1","text-align:left");
-    addCell(tr,elrek_suma.sign,"1","text-align:left");
-    tbl.appendChild(tr);
-    var tr = document.createElement('tr'); //new  row
-    addCell(tr,"Rekonstrukce: studená voda","1","text-align:left");
-    addCell(tr,Math.abs(svrek_suma.dif)+ " Kč","1","text-align:left");
-    addCell(tr,svrek_suma.sign,"1","text-align:left");
-    tbl.appendChild(tr);
-    var tr = document.createElement('tr'); //new  row
-    addCell(tr,"Rekonstrukce: teplá voda","1","text-align:left");
-    addCell(tr,Math.abs(tvrek_suma.dif)+ " Kč","1","text-align:left");
-    addCell(tr,tvrek_suma.sign,"1","text-align:left");
-    tbl.appendChild(tr);
+    //var tr = document.createElement('tr'); //new  row
+    //addCell(tr,"Rekonstrukce: elektrická energie","1","text-align:left");
+    //addCell(tr,Math.abs(elrek_suma.dif)+ " Kč","1","text-align:left");
+    //addCell(tr,elrek_suma.sign,"1","text-align:left");
+    //tbl.appendChild(tr);
+    //var tr = document.createElement('tr'); //new  row
+    //addCell(tr,"Rekonstrukce: studená voda","1","text-align:left");
+    //addCell(tr,Math.abs(svrek_suma.dif)+ " Kč","1","text-align:left");
+    //addCell(tr,svrek_suma.sign,"1","text-align:left");
+    //tbl.appendChild(tr);
+    //var tr = document.createElement('tr'); //new  row
+    //addCell(tr,"Rekonstrukce: teplá voda","1","text-align:left");
+    //addCell(tr,Math.abs(tvrek_suma.dif)+ " Kč","1","text-align:left");
+   // addCell(tr,tvrek_suma.sign,"1","text-align:left");
+   // tbl.appendChild(tr);
     var tr = document.createElement('tr'); //new  row
     addCell(tr,"Celkem","1","text-align:left");
     addCell(tr,Math.abs(ov_suma.dif)+ " Kč","1","text-align:left");

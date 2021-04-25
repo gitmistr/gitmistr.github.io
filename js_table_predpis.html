@@ -21,8 +21,8 @@
 
       var najem = []; //pole Polozky najemneho
       var prpays = []; //pole Predpis polozek za sluzby
-      najem.push({kod: "sl",id:"Služby, voda a topení", m: 0}); //calculat predpis
-      najem.push({kod: "el",id:"Elektrická energie",    m: 1100});
+      najem.push({kod: "sl",id:"Služby, voda a topení", m: 2726}); //calculat predpis
+      najem.push({kod: "el",id:"Elektrická energie",    m: 1300});
       najem.push({kod: "pl",id:"Plyn",                  m: 300});
       najem.push({kod: "na",id:"Nájem",                 m: 4700});
 
@@ -50,7 +50,7 @@
         najem.forEach(sumup1); 
       function sumup1(value, index, array) 
         {
-          if(value.kod == "sl") value.m = pr_suma; //calculate sluzby
+          //if(value.kod == "sl") value.m = pr_suma; //calculate sluzby
           celkemplatba = celkemplatba + value.m; 
         }
       </script>
